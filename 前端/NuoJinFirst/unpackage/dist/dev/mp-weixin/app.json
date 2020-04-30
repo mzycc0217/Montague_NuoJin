@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/xuanqujiaose/xuanse",
+    "pages/my/my",
+    "pages/Login/login",
+    "pages/xuqiu/xuqiu",
+    "pages/sahngcheng/sahngcheng",
+    "pages/index/index",
+    "pages/fenlei/fenlei",
+    "pages/Decimal/Decimal"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F37B1D",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "height": "40px",
+    "color": "#999999",
+    "selectedColor": "#3D7EFF",
+    "borderStyle": "black",
+    "fontSize": "14px",
+    "list": [
+      {
+        "pagePath": "pages/xuqiu/xuqiu",
+        "iconPath": "static/tobar-icon/xuqiu3.png",
+        "selectedIconPath": "static/tobar-icon/select2.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/sahngcheng/sahngcheng",
+        "iconPath": "static/tobar-icon/shangcheng.png",
+        "selectedIconPath": "static/tobar-icon/select3.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./static/tobar-icon/home-o.png",
+        "selectedIconPath": "static/tobar-icon/select1.png",
+        "text": "关于"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tobar-icon/Icon_wode--outline.png",
+        "selectedIconPath": "static/tobar-icon/select4.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

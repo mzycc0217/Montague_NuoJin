@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .nj_card{
+	width: 750upx;
+	height: 160upx;
+	background-color: white;
+	display: flex;
+	margin-top: 10upx;
+}
+.nj_image{
+	width: 160upx;
+	height: 160upx;
+}
+.nj_image>image{
+	width: 160upx;
+	height: 160upx;
+}
+.nj_right{
+	width: 400upx;
+	flex-direction: column;
+	padding: 10upx;
+	margin-left: 20upx;
+}
+.nj_right>view{
+	margin-top: 20upx;
+	
+}
+.nj_right>view:first-child{
+	  white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	font-size: 32upx;
+	font-weight: bold;
+	color: #8C9DA7;
+}
+.nj_right>view:last-child{
+	  white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	margin-top: 40upx;
+	font-size: 26;
+	
+	color: #8C9DA7;
+}
+.datas{
+	white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+    margin-left: 100upx;
+	margin-right: 20upx;
+	line-height: 160upx;
+	
+	font-size: 24upx;
+	color:#8C9DA7 ; 
+} */
+
+
+

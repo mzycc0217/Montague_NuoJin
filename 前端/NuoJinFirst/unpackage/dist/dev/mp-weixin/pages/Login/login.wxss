@@ -1,0 +1,28 @@
+
+.Logo{
+	width: 200rpx;
+	height: 200rpx;
+}
+.log_input{
+	height: 130rpx;
+	border-bottom: 1rpx solid #DDDDDD;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	        flex-grow: 1;
+}
+.input_f{
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+}
+.line{
+	height: 1rpx;
+	background-color: #DDDDDD;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	        flex-grow: 1;
+}
+.wxlogn{
+	width: 65rpx;
+	height: 65rpx;
+}
+

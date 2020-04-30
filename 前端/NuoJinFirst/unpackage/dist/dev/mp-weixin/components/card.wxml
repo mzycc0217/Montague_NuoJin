@@ -1,0 +1,1 @@
+<view><swiper class="imageContainer" previous-margin="45rpx" next-margin="45rpx" circular autoplay><block wx:for="{{imgList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><swiper-item class="swiperitem"><image class="itemImg" src="{{item}}" lazy-load></image></swiper-item></block><image src="../static/Logo/logo.png"></image></swiper></view>
