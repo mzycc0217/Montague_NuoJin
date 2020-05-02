@@ -1,4 +1,16 @@
 
+.gonggao{
+	width: 500rpx;
+}
+.gonggao image{
+	width: 75%;
+	margin-bottom: 20rpx;
+}
+.gonggao button{
+	margin-top: 20rpx;
+	background: #FFE934;
+	color: #171606;
+}
 .nj_header{
 	background-color: white;
 	width: 100%;
@@ -8,8 +20,9 @@
 }
 .ct{
 	font-size: 30rpx;
-	margin-left: 30rpx;
+	margin-left: 4rpx;
 	line-height: 100rpx;
+	width: 213rpx;
 }
 .tex_height{
 	height: 500rpx;
@@ -22,4 +35,33 @@
 .input-xuanzeqi{
 	border: 1px solid black;
 }
+.cs
+{
+	margin-left: 9rpx;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.cell-pd {
+	padding: 22rpx 30rpx;
+}
+.list-pd {
+	margin-top: 50rpx;
+}
+.uni-uploader__file{
+	position:relative;
+}
+.icon-shanchu{
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	background: #333333;
+	color: #FFFFFF;
+	padding: 2rpx 10rpx;
+	border-radius: 10rpx;
+}
+
+	
+
 

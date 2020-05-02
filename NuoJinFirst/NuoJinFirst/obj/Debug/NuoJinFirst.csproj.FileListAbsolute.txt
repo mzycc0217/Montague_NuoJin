@@ -88,7 +88,6 @@ C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\zh-
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\zh-Hans\System.Web.WebPages.resources.dll
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\obj\Debug\NuoJinFirst.csprojAssemblyReference.cache
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\obj\Debug\NuoJinFirst.csproj.CopyComplete
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\obj\Debug\NuoJinFirst.dll
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\obj\Debug\NuoJinFirst.pdb
@@ -100,3 +99,4 @@ C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\JWT
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\EntityFramework.xml
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\JWT.xml
 C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\bin\zh-Hans\EntityFramework.resources.dll
+C:\Users\冬天捡到的徒弟xin\Desktop\诺金\NuoJinFirst\NuoJinFirst\obj\Debug\NuoJinFirst.csprojAssemblyReference.cache

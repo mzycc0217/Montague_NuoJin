@@ -19,7 +19,7 @@ namespace NuoJinFirst.Models.DB
             this.Shop_Information_T = new HashSet<Shop_Information_T>();
         }
     
-        public int Shop_Type_Id { get; set; }
+        public long Shop_Type_Id { get; set; }
         public string Shop_Type_Name { get; set; }
     
         public virtual ICollection<Shop_Information_T> Shop_Information_T { get; set; }

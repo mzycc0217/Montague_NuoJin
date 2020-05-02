@@ -14,8 +14,8 @@ namespace NuoJinFirst.Models.DB
     
     public partial class News_T
     {
-        public int News_ID { get; set; }
-        public int News_Type_ID { get; set; }
+        public long News_ID { get; set; }
+        public long News_Type_ID { get; set; }
         public string News_Title { get; set; }
         public string News_Image { get; set; }
         public string News_Content { get; set; }
@@ -23,8 +23,8 @@ namespace NuoJinFirst.Models.DB
         public Nullable<System.DateTime> News_Releasetime { get; set; }
         public Nullable<System.DateTime> News_Backouttime { get; set; }
         public string News_IsorNo { get; set; }
-        public Nullable<int> User_ID { get; set; }
-        public Nullable<int> User_TyID { get; set; }
+        public Nullable<long> User_ID { get; set; }
+        public Nullable<long> User_TyID { get; set; }
     
         public virtual News_Type_T News_Type_T { get; set; }
         public virtual User_Information_T User_Information_T { get; set; }

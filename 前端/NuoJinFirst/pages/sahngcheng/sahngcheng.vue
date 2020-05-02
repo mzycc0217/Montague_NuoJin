@@ -28,7 +28,7 @@
 			<block v-for="(items,indexs) in list" :key="indexs">
 				<view class="block-first" @tap="xiangqing(items.Shop_Information_Id)">
 					<view>
-						<image :src="items.childre.shopImage[0]"></image>
+						<image :src="items.childre.shopImage[0]" mode="widthFix"></image>
 					</view>
 					<view>[{{items.Shop_Information_Name}}]</view>
 					<view>出售{{items.Shop_Information_Sell}}</view>

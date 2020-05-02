@@ -17,9 +17,11 @@ namespace NuoJinFirst.Models.DB
         public User_Information_T()
         {
             this.News_T = new HashSet<News_T>();
+            this.Order_T = new HashSet<Order_T>();
+            this.User_Menus_Quanxian_T = new HashSet<User_Menus_Quanxian_T>();
         }
     
-        public int User_ID { get; set; }
+        public long User_ID { get; set; }
         public string User_Bieming { get; set; }
         public string User_Name { get; set; }
         public string User_PassWord { get; set; }
@@ -27,12 +29,15 @@ namespace NuoJinFirst.Models.DB
         public string User_Image { get; set; }
         public string User_Address { get; set; }
         public string User_Number { get; set; }
-        public Nullable<int> User_TyID { get; set; }
+        public Nullable<long> User_TyID { get; set; }
         public Nullable<int> User_Certification { get; set; }
-        public Nullable<int> User_Vip_ID { get; set; }
+        public Nullable<long> User_Vip_ID { get; set; }
+        public Nullable<int> User_JIfen { get; set; }
     
         public virtual ICollection<News_T> News_T { get; set; }
+        public virtual ICollection<Order_T> Order_T { get; set; }
         public virtual User_Type_T User_Type_T { get; set; }
         public virtual User_Vip_T User_Vip_T { get; set; }
+        public virtual ICollection<User_Menus_Quanxian_T> User_Menus_Quanxian_T { get; set; }
     }
 }

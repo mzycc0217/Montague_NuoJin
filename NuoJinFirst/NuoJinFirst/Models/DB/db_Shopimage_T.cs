@@ -14,9 +14,9 @@ namespace NuoJinFirst.Models.DB
     
     public partial class db_Shopimage_T
     {
-        public int ShopimageID { get; set; }
+        public long ShopimageID { get; set; }
         public string shopImage { get; set; }
-        public Nullable<int> Shop_Information_Id { get; set; }
+        public Nullable<long> Shop_Information_Id { get; set; }
     
         public virtual Shop_Information_T Shop_Information_T { get; set; }
     }

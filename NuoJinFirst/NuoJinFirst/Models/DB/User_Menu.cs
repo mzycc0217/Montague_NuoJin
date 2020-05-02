@@ -19,7 +19,7 @@ namespace NuoJinFirst.Models.DB
             this.Quanxian_T = new HashSet<Quanxian_T>();
         }
     
-        public int Menu_ID { get; set; }
+        public long Menu_ID { get; set; }
         public string Menu_Name { get; set; }
         public string Menu_Active { get; set; }
         public string Menu_Icon { get; set; }

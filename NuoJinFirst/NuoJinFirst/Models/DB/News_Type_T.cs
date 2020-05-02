@@ -19,7 +19,7 @@ namespace NuoJinFirst.Models.DB
             this.News_T = new HashSet<News_T>();
         }
     
-        public int News_Type_ID { get; set; }
+        public long News_Type_ID { get; set; }
         public string News_Type_Name { get; set; }
     
         public virtual ICollection<News_T> News_T { get; set; }

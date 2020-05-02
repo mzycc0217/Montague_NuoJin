@@ -14,9 +14,9 @@ namespace NuoJinFirst.Models.DB
     
     public partial class Quanxian_T
     {
-        public int ID { get; set; }
-        public Nullable<int> Menu_ID { get; set; }
-        public Nullable<int> User_TyID { get; set; }
+        public long ID { get; set; }
+        public Nullable<long> Menu_ID { get; set; }
+        public Nullable<long> User_TyID { get; set; }
     
         public virtual User_Menu User_Menu { get; set; }
         public virtual User_Type_T User_Type_T { get; set; }

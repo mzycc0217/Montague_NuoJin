@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ec26a8cfbaa438e91c5e0ec923e801c" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_CateringModel.Adddress_T" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.db_Shop_Type_T" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.db_Shopimage_T" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.News_T" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.News_Type_T" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.Order_T" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.Quanxian_T" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.Shop_Information_T" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.Shop_T" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.User_Information_T" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.User_Menu" Width="1.5" PointX="3.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.User_Type_T" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_CateringModel.User_Vip_T" Width="1.5" PointX="3.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="DB_CateringModel.FK_Order_T_Adddress_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Shop_Information_T_db_Shop_Type_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_db_Shopimage_T_Shop_Information_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_News_T_News_Type_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_News_T_User_Information_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_News_T_User_Type_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Order_T_Order_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Order_T_Shop_Information_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Quanxian_T_User_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Quanxian_T_User_Type_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_Shop_Information_T_Shop_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_User_Information_T_User_Type_T" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_CateringModel.FK_User_Information_T_User_Vip_T" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_CateringModel.Menus_User_T" Width="1.5" PointX="9.375" PointY="6" />
+        <EntityTypeShape EntityType="DB_CateringModel.Pinglun_T" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DB_CateringModel.User_Menus_Quanxian_T" Width="1.5" PointX="11.625" PointY="2" />
+        <EntityTypeShape EntityType="DB_CateringModel.Zhunjia_T" Width="1.5" PointX="0.75" PointY="9.75" />
+        <AssociationConnector Association="DB_CateringModel.FK_User_Menus_Quanxian_T_Menus_User_T" />
+        <AssociationConnector Association="DB_CateringModel.FK_User_Menus_Quanxian_T_User_Information_T" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_CateringModelStoreContainer" CdmEntityContainer="DB_CateringEntities">
+    <EntitySetMapping Name="Adddress_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Adddress_T">
+        <MappingFragment StoreEntitySet="Adddress_T">
+          <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+          <ScalarProperty Name="Address_City" ColumnName="Address_City" />
+          <ScalarProperty Name="Address_Diqu" ColumnName="Address_Diqu" />
+          <ScalarProperty Name="Address_Phone" ColumnName="Address_Phone" />
+          <ScalarProperty Name="Address_Lianxiren" ColumnName="Address_Lianxiren" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="db_Shop_Type_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.db_Shop_Type_T">
+        <MappingFragment StoreEntitySet="db_Shop_Type_T">
+          <ScalarProperty Name="Shop_Type_Id" ColumnName="Shop_Type_Id" />
+          <ScalarProperty Name="Shop_Type_Name" ColumnName="Shop_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="db_Shopimage_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.db_Shopimage_T">
+        <MappingFragment StoreEntitySet="db_Shopimage_T">
+          <ScalarProperty Name="ShopimageID" ColumnName="ShopimageID" />
+          <ScalarProperty Name="shopImage" ColumnName="shopImage" />
+          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.News_T">
+        <MappingFragment StoreEntitySet="News_T">
+          <ScalarProperty Name="News_ID" ColumnName="News_ID" />
+          <ScalarProperty Name="News_Type_ID" ColumnName="News_Type_ID" />
+          <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+          <ScalarProperty Name="News_Image" ColumnName="News_Image" />
+          <ScalarProperty Name="News_Content" ColumnName="News_Content" />
+          <ScalarProperty Name="News_Describe" ColumnName="News_Describe" />
+          <ScalarProperty Name="News_Releasetime" ColumnName="News_Releasetime" />
+          <ScalarProperty Name="News_Backouttime" ColumnName="News_Backouttime" />
+          <ScalarProperty Name="News_IsorNo" ColumnName="News_IsorNo" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Type_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.News_Type_T">
+        <MappingFragment StoreEntitySet="News_Type_T">
+          <ScalarProperty Name="News_Type_ID" ColumnName="News_Type_ID" />
+          <ScalarProperty Name="News_Type_Name" ColumnName="News_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Order_T">
+        <MappingFragment StoreEntitySet="Order_T">
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+          <ScalarProperty Name="Order_time" ColumnName="Order_time" />
+          <ScalarProperty Name="Order_State" ColumnName="Order_State" />
+          <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+          <ScalarProperty Name="Order_Count" ColumnName="Order_Count" />
+          <ScalarProperty Name="Order_Checked" ColumnName="Order_Checked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quanxian_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Quanxian_T">
+        <MappingFragment StoreEntitySet="Quanxian_T">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+          <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shop_Information_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Shop_Information_T">
+        <MappingFragment StoreEntitySet="Shop_Information_T">
+          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+          <ScalarProperty Name="Shop_Information_Name" ColumnName="Shop_Information_Name" />
+          <ScalarProperty Name="Shop_Information_Price" ColumnName="Shop_Information_Price" />
+          <ScalarProperty Name="Shop_Information_Discount" ColumnName="Shop_Information_Discount" />
+          <ScalarProperty Name="Shop_Information_Count" ColumnName="Shop_Information_Count" />
+          <ScalarProperty Name="Shop_Information_Sell" ColumnName="Shop_Information_Sell" />
+          <ScalarProperty Name="Shop_Information_Deciaml" ColumnName="Shop_Information_Deciaml" />
+          <ScalarProperty Name="Shop_Type_Id" ColumnName="Shop_Type_Id" />
+          <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+          <ScalarProperty Name="Shop_Information_image" ColumnName="Shop_Information_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shop_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Shop_T">
+        <MappingFragment StoreEntitySet="Shop_T">
+          <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Information_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Information_T">
+        <MappingFragment StoreEntitySet="User_Information_T">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Bieming" ColumnName="User_Bieming" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_PassWord" ColumnName="User_PassWord" />
+          <ScalarProperty Name="User_Phone" ColumnName="User_Phone" />
+          <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+          <ScalarProperty Name="User_Address" ColumnName="User_Address" />
+          <ScalarProperty Name="User_Number" ColumnName="User_Number" />
+          <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+          <ScalarProperty Name="User_Certification" ColumnName="User_Certification" />
+          <ScalarProperty Name="User_Vip_ID" ColumnName="User_Vip_ID" />
+          <ScalarProperty Name="User_JIfen" ColumnName="User_JIfen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Menu">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Menu">
+        <MappingFragment StoreEntitySet="User_Menu">
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Menu_Active" ColumnName="Menu_Active" />
+          <ScalarProperty Name="Menu_Icon" ColumnName="Menu_Icon" />
+          <ScalarProperty Name="Menu_Show" ColumnName="Menu_Show" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Type_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Type_T">
+        <MappingFragment StoreEntitySet="User_Type_T">
+          <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+          <ScalarProperty Name="User_TyName" ColumnName="User_TyName" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Vip_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Vip_T">
+        <MappingFragment StoreEntitySet="User_Vip_T">
+          <ScalarProperty Name="User_Vip_ID" ColumnName="User_Vip_ID" />
+          <ScalarProperty Name="User_Vip_Name" ColumnName="User_Vip_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus_User_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Menus_User_T">
+        <MappingFragment StoreEntitySet="Menus_User_T">
+          <ScalarProperty Name="Menus_Url" ColumnName="Menus_Url" />
+          <ScalarProperty Name="Menus_icon" ColumnName="Menus_icon" />
+          <ScalarProperty Name="Menus_Name" ColumnName="Menus_Name" />
+          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pinglun_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Pinglun_T">
+        <MappingFragment StoreEntitySet="Pinglun_T">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+          <ScalarProperty Name="Pinglun_time" ColumnName="Pinglun_time" />
+          <ScalarProperty Name="Pinglun_Countent" ColumnName="Pinglun_Countent" />
+          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Menus_Quanxian_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Menus_Quanxian_T">
+        <MappingFragment StoreEntitySet="User_Menus_Quanxian_T">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+          <ScalarProperty Name="Guanxi_ID" ColumnName="Guanxi_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zhunjia_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Zhunjia_T">
+        <MappingFragment StoreEntitySet="Zhunjia_T">
+          <ScalarProperty Name="Zhujia_Couent" ColumnName="Zhujia_Couent" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+          <ScalarProperty Name="ZhuiJia_ID" ColumnName="ZhuiJia_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

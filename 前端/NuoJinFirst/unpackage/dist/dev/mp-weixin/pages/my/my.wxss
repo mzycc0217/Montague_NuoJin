@@ -92,7 +92,7 @@
 }
 .nj_yingyong{
 	width: 94%;
-	height: 500rpx;
+	height: 520rpx;
 	background-color: white;
 	margin-left: 2.8%;
 	margin-top: 130rpx;
@@ -112,11 +112,13 @@
 		-webkit-box-pack: justify;
 		-webkit-justify-content: space-between;
 		        justify-content: space-between;
+		text-align: center;
 }
 .nj_caidan{
 	width: 166rpx;
 	height: 120rpx;
 	padding: 30rpx;
+	text-align: cente
 }
 .nj_middle:after{
     content: '';

@@ -25,8 +25,8 @@
 			<view class="nj_middle">
 			<block v-for="(item,index) in list" :key="index" >
 			<view class="nj_caidan">
-				<view><image :src="item.image" style="width: 90upx; height: 90upx;"></image></view>
-				<view> {{item.name}}</view>
+				<view><view :class="item.Menu_Icon" style="font-size: 60upx; color: blue;"></view></view>
+				<view style="font-size: 26upx; font-weight: bold;"> {{item.Menu_Name}}</view>
 			</view>
 		</block>
 		</view>
@@ -70,49 +70,7 @@
 	export default {
 		data() {
 			return {
-				list:[
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					{
-						name:"千里眼",
-						image:"../../static/icon/lingshi.png"
-					},
-					
-				],
+				list:[],
 			imgList: [
 				{iamges:'../../static/images/daxiong.jpg'},
 				{iamges:'../../static/Logo/logo.png'},
@@ -123,13 +81,24 @@
 			}
 	},
 	onLoad() {
-	
+	this.requestmenu();
 		
 	},
 	methods:{
 		cardSwiper(e) {
 			this.cardCur = e.detail.current
 		},
+		requestmenu:function(){
+			uni.request({
+				url:"http://localhost:58793/Api/Logins/logins?id=1",
+				method:"GET",
+				success:(res)=> {
+					console.log(res)
+					this.list=res.data;
+					
+				}
+			})
+		}
 }
     
    }
@@ -213,7 +182,7 @@
  }
 .nj_yingyong{
 	width: 94%;
-	height: 500upx;
+	height: 520upx;
 	background-color: white;
 	margin-left: 2.8%;
 	margin-top: 130upx;
@@ -230,11 +199,14 @@
 	display: flex;
 	flex-wrap: wrap;
 		justify-content: space-between;
+		text-align: center;
+
 }
 .nj_caidan{
 	width: 166upx;
 	height: 120upx;
 	padding: 30upx;
+	text-align: cente
 	}
 .nj_middle:after{
     content: '';

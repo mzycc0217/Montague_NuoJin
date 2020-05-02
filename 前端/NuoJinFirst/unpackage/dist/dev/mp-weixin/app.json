@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/xuqiu/xuqiu",
+    "pages/School/study",
     "pages/xuanqujiaose/xuanse",
     "pages/my/my",
     "pages/Login/login",
-    "pages/xuqiu/xuqiu",
     "pages/sahngcheng/sahngcheng",
     "pages/index/index",
     "pages/fenlei/fenlei",
@@ -49,5 +50,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap51.json"
 }

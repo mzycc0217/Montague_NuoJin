@@ -21,7 +21,7 @@ namespace NuoJinFirst.Models.DB
             this.User_Information_T = new HashSet<User_Information_T>();
         }
     
-        public int User_TyID { get; set; }
+        public long User_TyID { get; set; }
         public string User_TyName { get; set; }
         public string Icon { get; set; }
     

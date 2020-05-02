@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_CateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adddress_T">
+          <Key>
+            <PropertyRef Name="Address_Id" />
+          </Key>
+          <Property Name="Address_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address_City" Type="nvarchar" MaxLength="10" />
+          <Property Name="Address_Diqu" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address_Phone" Type="nvarchar" MaxLength="12" />
+          <Property Name="Address_Lianxiren" Type="nchar" MaxLength="10" />
+          <Property Name="User_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="db_Shop_Type_T">
+          <Key>
+            <PropertyRef Name="Shop_Type_Id" />
+          </Key>
+          <Property Name="Shop_Type_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_Type_Name" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="db_Shopimage_T">
+          <Key>
+            <PropertyRef Name="ShopimageID" />
+          </Key>
+          <Property Name="ShopimageID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="shopImage" Type="nvarchar" MaxLength="30" />
+          <Property Name="Shop_Information_Id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Menus_User_T">
+          <Key>
+            <PropertyRef Name="Menus_ID" />
+          </Key>
+          <Property Name="Menus_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Menus_Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Menus_icon" Type="nvarchar" MaxLength="20" />
+          <Property Name="Menus_Url" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="News_T">
+          <Key>
+            <PropertyRef Name="News_ID" />
+          </Key>
+          <Property Name="News_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="News_Type_ID" Type="bigint" Nullable="false" />
+          <Property Name="News_Title" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="News_Image" Type="nvarchar" MaxLength="30" />
+          <Property Name="News_Content" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="News_Describe" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="News_Releasetime" Type="datetime" />
+          <Property Name="News_Backouttime" Type="datetime" />
+          <Property Name="News_IsorNo" Type="nvarchar" MaxLength="2" />
+          <Property Name="User_ID" Type="bigint" />
+          <Property Name="User_TyID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="News_Type_T">
+          <Key>
+            <PropertyRef Name="News_Type_ID" />
+          </Key>
+          <Property Name="News_Type_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="News_Type_Name" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="Order_T">
+          <Key>
+            <PropertyRef Name="Order_Id" />
+          </Key>
+          <Property Name="Order_Id" Type="bigint" Nullable="false" />
+          <Property Name="User_ID" Type="bigint" />
+          <Property Name="Shop_Information_Id" Type="bigint" />
+          <Property Name="Order_time" Type="datetime" />
+          <Property Name="Order_State" Type="int" />
+          <Property Name="Address_Id" Type="bigint" />
+          <Property Name="Order_Count" Type="int" />
+          <Property Name="Order_Checked" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Pinglun_T">
+          <Key>
+            <PropertyRef Name="Pinglun_ID" />
+          </Key>
+          <Property Name="Pinglun_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pinglun_Countent" Type="nvarchar" MaxLength="100" />
+          <Property Name="Pinglun_time" Type="datetime" />
+          <Property Name="Shop_Information_Id" Type="bigint" />
+          <Property Name="User_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Quanxian_T">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Menu_ID" Type="bigint" />
+          <Property Name="User_TyID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Shop_Information_T">
+          <Key>
+            <PropertyRef Name="Shop_Information_Id" />
+          </Key>
+          <Property Name="Shop_Information_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shop_Information_Name" Type="nvarchar" MaxLength="10" />
+          <Property Name="Shop_Information_Price" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Shop_Information_Discount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Shop_Information_Count" Type="int" />
+          <Property Name="Shop_Information_Sell" Type="int" />
+          <Property Name="Shop_Information_Deciaml" Type="nvarchar" MaxLength="50" />
+          <Property Name="Shop_Type_Id" Type="bigint" />
+          <Property Name="Shop_Id" Type="bigint" />
+          <Property Name="Shop_Information_image" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Shop_T">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShopName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="User_Information_T">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Bieming" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_PassWord" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="User_Phone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="User_Image" Type="nvarchar" MaxLength="20" />
+          <Property Name="User_Address" Type="nvarchar" MaxLength="30" />
+          <Property Name="User_Number" Type="nvarchar" MaxLength="19" />
+          <Property Name="User_TyID" Type="bigint" />
+          <Property Name="User_Certification" Type="int" />
+          <Property Name="User_Vip_ID" Type="bigint" />
+          <Property Name="User_JIfen" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Menu">
+          <Key>
+            <PropertyRef Name="Menu_ID" />
+          </Key>
+          <Property Name="Menu_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Menu_Name" Type="nchar" MaxLength="10" />
+          <Property Name="Menu_Active" Type="nvarchar" MaxLength="30" />
+          <Property Name="Menu_Icon" Type="nvarchar" MaxLength="30" />
+          <Property Name="Menu_Show" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="User_Menus_Quanxian_T">
+          <Key>
+            <PropertyRef Name="Guanxi_ID" />
+          </Key>
+          <Property Name="Guanxi_ID" Type="int" Nullable="false" />
+          <Property Name="Menus_ID" Type="bigint" />
+          <Property Name="User_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="User_Type_T">
+          <Key>
+            <PropertyRef Name="User_TyID" />
+          </Key>
+          <Property Name="User_TyID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_TyName" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="User_Vip_T">
+          <Key>
+            <PropertyRef Name="User_Vip_ID" />
+          </Key>
+          <Property Name="User_Vip_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Vip_Name" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Zhunjia_T">
+          <Key>
+            <PropertyRef Name="ZhuiJia_ID" />
+          </Key>
+          <Property Name="ZhuiJia_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pinglun_ID" Type="bigint" />
+          <Property Name="User_ID" Type="bigint" />
+          <Property Name="Zhujia_Couent" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_News_T_News_Type_T">
+          <End Role="News_Type_T" Type="Self.News_Type_T" Multiplicity="1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News_Type_T">
+              <PropertyRef Name="News_Type_ID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="News_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_T_User_Information_T">
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_T_Adddress_T">
+          <End Role="Adddress_T" Type="Self.Adddress_T" Multiplicity="0..1" />
+          <End Role="Order_T" Type="Self.Order_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adddress_T">
+              <PropertyRef Name="Address_Id" />
+            </Principal>
+            <Dependent Role="Order_T">
+              <PropertyRef Name="Address_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_T_Order_T">
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+          <End Role="Order_T" Type="Self.Order_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Order_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanxian_T_User_Menu">
+          <End Role="User_Menu" Type="Self.User_Menu" Multiplicity="0..1" />
+          <End Role="Quanxian_T" Type="Self.Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Menu">
+              <PropertyRef Name="Menu_ID" />
+            </Principal>
+            <Dependent Role="Quanxian_T">
+              <PropertyRef Name="Menu_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanxian_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="Quanxian_T" Type="Self.Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="Quanxian_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Information_T_db_Shop_Type_T">
+          <End Role="db_Shop_Type_T" Type="Self.db_Shop_Type_T" Multiplicity="0..1" />
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="db_Shop_Type_T">
+              <PropertyRef Name="Shop_Type_Id" />
+            </Principal>
+            <Dependent Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Information_T_Shop_T">
+          <End Role="Shop_T" Type="Self.Shop_T" Multiplicity="0..1" />
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop_T">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Information_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="User_Information_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Information_T_User_Vip_T">
+          <End Role="User_Vip_T" Type="Self.User_Vip_T" Multiplicity="0..1" />
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Vip_T">
+              <PropertyRef Name="User_Vip_ID" />
+            </Principal>
+            <Dependent Role="User_Information_T">
+              <PropertyRef Name="User_Vip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Menus_Quanxian_T_Menus_User_T">
+          <End Role="Menus_User_T" Type="Self.Menus_User_T" Multiplicity="0..1" />
+          <End Role="User_Menus_Quanxian_T" Type="Self.User_Menus_Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus_User_T">
+              <PropertyRef Name="Menus_ID" />
+            </Principal>
+            <Dependent Role="User_Menus_Quanxian_T">
+              <PropertyRef Name="Menus_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Menus_Quanxian_T_User_Information_T">
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+          <End Role="User_Menus_Quanxian_T" Type="Self.User_Menus_Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="User_Menus_Quanxian_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_CateringModelStoreContainer">
+          <EntitySet Name="Adddress_T" EntityType="Self.Adddress_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="db_Shop_Type_T" EntityType="Self.db_Shop_Type_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="db_Shopimage_T" EntityType="Self.db_Shopimage_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menus_User_T" EntityType="Self.Menus_User_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News_T" EntityType="Self.News_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News_Type_T" EntityType="Self.News_Type_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_T" EntityType="Self.Order_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pinglun_T" EntityType="Self.Pinglun_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quanxian_T" EntityType="Self.Quanxian_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shop_Information_T" EntityType="Self.Shop_Information_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shop_T" EntityType="Self.Shop_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Information_T" EntityType="Self.User_Information_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Menu" EntityType="Self.User_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Menus_Quanxian_T" EntityType="Self.User_Menus_Quanxian_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Type_T" EntityType="Self.User_Type_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Vip_T" EntityType="Self.User_Vip_T" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zhunjia_T" EntityType="Self.Zhunjia_T" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_News_T_News_Type_T" Association="Self.FK_News_T_News_Type_T">
+            <End Role="News_Type_T" EntitySet="News_Type_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_T_User_Information_T" Association="Self.FK_News_T_User_Information_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_T_User_Type_T" Association="Self.FK_News_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_T_Adddress_T" Association="Self.FK_Order_T_Adddress_T">
+            <End Role="Adddress_T" EntitySet="Adddress_T" />
+            <End Role="Order_T" EntitySet="Order_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_T_Order_T" Association="Self.FK_Order_T_Order_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="Order_T" EntitySet="Order_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanxian_T_User_Menu" Association="Self.FK_Quanxian_T_User_Menu">
+            <End Role="User_Menu" EntitySet="User_Menu" />
+            <End Role="Quanxian_T" EntitySet="Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanxian_T_User_Type_T" Association="Self.FK_Quanxian_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="Quanxian_T" EntitySet="Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Information_T_db_Shop_Type_T" Association="Self.FK_Shop_Information_T_db_Shop_Type_T">
+            <End Role="db_Shop_Type_T" EntitySet="db_Shop_Type_T" />
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Information_T_Shop_T" Association="Self.FK_Shop_Information_T_Shop_T">
+            <End Role="Shop_T" EntitySet="Shop_T" />
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Information_T_User_Type_T" Association="Self.FK_User_Information_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Information_T_User_Vip_T" Association="Self.FK_User_Information_T_User_Vip_T">
+            <End Role="User_Vip_T" EntitySet="User_Vip_T" />
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Menus_Quanxian_T_Menus_User_T" Association="Self.FK_User_Menus_Quanxian_T_Menus_User_T">
+            <End Role="Menus_User_T" EntitySet="Menus_User_T" />
+            <End Role="User_Menus_Quanxian_T" EntitySet="User_Menus_Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Menus_Quanxian_T_User_Information_T" Association="Self.FK_User_Menus_Quanxian_T_User_Information_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="User_Menus_Quanxian_T" EntitySet="User_Menus_Quanxian_T" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_CateringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adddress_T">
+          <Key>
+            <PropertyRef Name="Address_Id" />
+          </Key>
+          <Property Name="Address_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address_City" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address_Diqu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Address_Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Address_Lianxiren" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="User_ID" Type="Int64" />
+          <NavigationProperty Name="Order_T" Relationship="Self.FK_Order_T_Adddress_T" FromRole="Adddress_T" ToRole="Order_T" />
+        </EntityType>
+        <EntityType Name="db_Shop_Type_T">
+          <Key>
+            <PropertyRef Name="Shop_Type_Id" />
+          </Key>
+          <Property Name="Shop_Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_Type_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Shop_Information_T" Relationship="Self.FK_Shop_Information_T_db_Shop_Type_T" FromRole="db_Shop_Type_T" ToRole="Shop_Information_T" />
+        </EntityType>
+        <EntityType Name="db_Shopimage_T">
+          <Key>
+            <PropertyRef Name="ShopimageID" />
+          </Key>
+          <Property Name="ShopimageID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="shopImage" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Shop_Information_Id" Type="Int64" />
+          <NavigationProperty Name="Shop_Information_T" Relationship="Self.FK_db_Shopimage_T_Shop_Information_T" FromRole="db_Shopimage_T" ToRole="Shop_Information_T" />
+        </EntityType>
+        <EntityType Name="News_T">
+          <Key>
+            <PropertyRef Name="News_ID" />
+          </Key>
+          <Property Name="News_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="News_Type_ID" Type="Int64" Nullable="false" />
+          <Property Name="News_Title" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="News_Image" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="News_Content" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="News_Describe" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="News_Releasetime" Type="DateTime" Precision="3" />
+          <Property Name="News_Backouttime" Type="DateTime" Precision="3" />
+          <Property Name="News_IsorNo" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="User_ID" Type="Int64" />
+          <Property Name="User_TyID" Type="Int64" />
+          <NavigationProperty Name="News_Type_T" Relationship="Self.FK_News_T_News_Type_T" FromRole="News_T" ToRole="News_Type_T" />
+          <NavigationProperty Name="User_Information_T" Relationship="Self.FK_News_T_User_Information_T" FromRole="News_T" ToRole="User_Information_T" />
+          <NavigationProperty Name="User_Type_T" Relationship="Self.FK_News_T_User_Type_T" FromRole="News_T" ToRole="User_Type_T" />
+        </EntityType>
+        <EntityType Name="News_Type_T">
+          <Key>
+            <PropertyRef Name="News_Type_ID" />
+          </Key>
+          <Property Name="News_Type_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="News_Type_Name" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="News_T" Relationship="Self.FK_News_T_News_Type_T" FromRole="News_Type_T" ToRole="News_T" />
+        </EntityType>
+        <EntityType Name="Order_T">
+          <Key>
+            <PropertyRef Name="Order_Id" />
+          </Key>
+          <Property Name="Order_Id" Type="Int64" Nullable="false" />
+          <Property Name="User_ID" Type="Int64" />
+          <Property Name="Shop_Information_Id" Type="Int64" />
+          <Property Name="Order_time" Type="DateTime" Precision="3" />
+          <Property Name="Order_State" Type="Int32" />
+          <Property Name="Address_Id" Type="Int64" />
+          <Property Name="Order_Count" Type="Int32" />
+          <Property Name="Order_Checked" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Adddress_T" Relationship="Self.FK_Order_T_Adddress_T" FromRole="Order_T" ToRole="Adddress_T" />
+          <NavigationProperty Name="User_Information_T" Relationship="Self.FK_Order_T_Order_T" FromRole="Order_T" ToRole="User_Information_T" />
+          <NavigationProperty Name="Shop_Information_T" Relationship="Self.FK_Order_T_Shop_Information_T" FromRole="Order_T" ToRole="Shop_Information_T" />
+        </EntityType>
+        <EntityType Name="Quanxian_T">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu_ID" Type="Int64" />
+          <Property Name="User_TyID" Type="Int64" />
+          <NavigationProperty Name="User_Menu" Relationship="Self.FK_Quanxian_T_User_Menu" FromRole="Quanxian_T" ToRole="User_Menu" />
+          <NavigationProperty Name="User_Type_T" Relationship="Self.FK_Quanxian_T_User_Type_T" FromRole="Quanxian_T" ToRole="User_Type_T" />
+        </EntityType>
+        <EntityType Name="Shop_Information_T">
+          <Key>
+            <PropertyRef Name="Shop_Information_Id" />
+          </Key>
+          <Property Name="Shop_Information_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shop_Information_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Shop_Information_Price" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Shop_Information_Discount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Shop_Information_Count" Type="Int32" />
+          <Property Name="Shop_Information_Sell" Type="Int32" />
+          <Property Name="Shop_Information_Deciaml" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shop_Type_Id" Type="Int64" />
+          <Property Name="Shop_Id" Type="Int64" />
+          <Property Name="Shop_Information_image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="db_Shop_Type_T" Relationship="Self.FK_Shop_Information_T_db_Shop_Type_T" FromRole="Shop_Information_T" ToRole="db_Shop_Type_T" />
+          <NavigationProperty Name="db_Shopimage_T" Relationship="Self.FK_db_Shopimage_T_Shop_Information_T" FromRole="Shop_Information_T" ToRole="db_Shopimage_T" />
+          <NavigationProperty Name="Order_T" Relationship="Self.FK_Order_T_Shop_Information_T" FromRole="Shop_Information_T" ToRole="Order_T" />
+          <NavigationProperty Name="Shop_T" Relationship="Self.FK_Shop_Information_T_Shop_T" FromRole="Shop_Information_T" ToRole="Shop_T" />
+        </EntityType>
+        <EntityType Name="Shop_T">
+          <Key>
+            <PropertyRef Name="Shop_Id" />
+          </Key>
+          <Property Name="Shop_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShopName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Shop_Information_T" Relationship="Self.FK_Shop_Information_T_Shop_T" FromRole="Shop_T" ToRole="Shop_Information_T" />
+        </EntityType>
+        <EntityType Name="User_Information_T">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Bieming" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_PassWord" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="User_Image" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="User_Address" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="User_Number" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+          <Property Name="User_TyID" Type="Int64" />
+          <Property Name="User_Certification" Type="Int32" />
+          <Property Name="User_Vip_ID" Type="Int64" />
+          <Property Name="User_JIfen" Type="Int32" />
+          <NavigationProperty Name="News_T" Relationship="Self.FK_News_T_User_Information_T" FromRole="User_Information_T" ToRole="News_T" />
+          <NavigationProperty Name="Order_T" Relationship="Self.FK_Order_T_Order_T" FromRole="User_Information_T" ToRole="Order_T" />
+          <NavigationProperty Name="User_Type_T" Relationship="Self.FK_User_Information_T_User_Type_T" FromRole="User_Information_T" ToRole="User_Type_T" />
+          <NavigationProperty Name="User_Vip_T" Relationship="Self.FK_User_Information_T_User_Vip_T" FromRole="User_Information_T" ToRole="User_Vip_T" />
+          <NavigationProperty Name="User_Menus_Quanxian_T" Relationship="DB_CateringModel.FK_User_Menus_Quanxian_T_User_Information_T" FromRole="User_Information_T" ToRole="User_Menus_Quanxian_T" />
+        </EntityType>
+        <EntityType Name="User_Menu">
+          <Key>
+            <PropertyRef Name="Menu_ID" />
+          </Key>
+          <Property Name="Menu_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Menu_Active" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Menu_Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Menu_Show" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Quanxian_T" Relationship="Self.FK_Quanxian_T_User_Menu" FromRole="User_Menu" ToRole="Quanxian_T" />
+        </EntityType>
+        <EntityType Name="User_Type_T">
+          <Key>
+            <PropertyRef Name="User_TyID" />
+          </Key>
+          <Property Name="User_TyID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_TyName" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="News_T" Relationship="Self.FK_News_T_User_Type_T" FromRole="User_Type_T" ToRole="News_T" />
+          <NavigationProperty Name="Quanxian_T" Relationship="Self.FK_Quanxian_T_User_Type_T" FromRole="User_Type_T" ToRole="Quanxian_T" />
+          <NavigationProperty Name="User_Information_T" Relationship="Self.FK_User_Information_T_User_Type_T" FromRole="User_Type_T" ToRole="User_Information_T" />
+        </EntityType>
+        <EntityType Name="User_Vip_T">
+          <Key>
+            <PropertyRef Name="User_Vip_ID" />
+          </Key>
+          <Property Name="User_Vip_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Vip_Name" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User_Information_T" Relationship="Self.FK_User_Information_T_User_Vip_T" FromRole="User_Vip_T" ToRole="User_Information_T" />
+        </EntityType>
+        <Association Name="FK_Order_T_Adddress_T">
+          <End Role="Adddress_T" Type="Self.Adddress_T" Multiplicity="0..1" />
+          <End Role="Order_T" Type="Self.Order_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adddress_T">
+              <PropertyRef Name="Address_Id" />
+            </Principal>
+            <Dependent Role="Order_T">
+              <PropertyRef Name="Address_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Information_T_db_Shop_Type_T">
+          <End Role="db_Shop_Type_T" Type="Self.db_Shop_Type_T" Multiplicity="0..1" />
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="db_Shop_Type_T">
+              <PropertyRef Name="Shop_Type_Id" />
+            </Principal>
+            <Dependent Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_db_Shopimage_T_Shop_Information_T">
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="0..1" />
+          <End Role="db_Shopimage_T" Type="Self.db_Shopimage_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Information_Id" />
+            </Principal>
+            <Dependent Role="db_Shopimage_T">
+              <PropertyRef Name="Shop_Information_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_T_News_Type_T">
+          <End Role="News_Type_T" Type="Self.News_Type_T" Multiplicity="1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News_Type_T">
+              <PropertyRef Name="News_Type_ID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="News_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_T_User_Information_T">
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="News_T" Type="Self.News_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="News_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_T_Order_T">
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+          <End Role="Order_T" Type="Self.Order_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Order_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_T_Shop_Information_T">
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="0..1" />
+          <End Role="Order_T" Type="Self.Order_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Information_Id" />
+            </Principal>
+            <Dependent Role="Order_T">
+              <PropertyRef Name="Shop_Information_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanxian_T_User_Menu">
+          <End Role="User_Menu" Type="Self.User_Menu" Multiplicity="0..1" />
+          <End Role="Quanxian_T" Type="Self.Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Menu">
+              <PropertyRef Name="Menu_ID" />
+            </Principal>
+            <Dependent Role="Quanxian_T">
+              <PropertyRef Name="Menu_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quanxian_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="Quanxian_T" Type="Self.Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="Quanxian_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Information_T_Shop_T">
+          <End Role="Shop_T" Type="Self.Shop_T" Multiplicity="0..1" />
+          <End Role="Shop_Information_T" Type="Self.Shop_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop_T">
+              <PropertyRef Name="Shop_Id" />
+            </Principal>
+            <Dependent Role="Shop_Information_T">
+              <PropertyRef Name="Shop_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Information_T_User_Type_T">
+          <End Role="User_Type_T" Type="Self.User_Type_T" Multiplicity="0..1" />
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type_T">
+              <PropertyRef Name="User_TyID" />
+            </Principal>
+            <Dependent Role="User_Information_T">
+              <PropertyRef Name="User_TyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Information_T_User_Vip_T">
+          <End Role="User_Vip_T" Type="Self.User_Vip_T" Multiplicity="0..1" />
+          <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Vip_T">
+              <PropertyRef Name="User_Vip_ID" />
+            </Principal>
+            <Dependent Role="User_Information_T">
+              <PropertyRef Name="User_Vip_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_CateringEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adddress_T" EntityType="Self.Adddress_T" />
+          <EntitySet Name="db_Shop_Type_T" EntityType="Self.db_Shop_Type_T" />
+          <EntitySet Name="db_Shopimage_T" EntityType="Self.db_Shopimage_T" />
+          <EntitySet Name="News_T" EntityType="Self.News_T" />
+          <EntitySet Name="News_Type_T" EntityType="Self.News_Type_T" />
+          <EntitySet Name="Order_T" EntityType="Self.Order_T" />
+          <EntitySet Name="Quanxian_T" EntityType="Self.Quanxian_T" />
+          <EntitySet Name="Shop_Information_T" EntityType="Self.Shop_Information_T" />
+          <EntitySet Name="Shop_T" EntityType="Self.Shop_T" />
+          <EntitySet Name="User_Information_T" EntityType="Self.User_Information_T" />
+          <EntitySet Name="User_Menu" EntityType="Self.User_Menu" />
+          <EntitySet Name="User_Type_T" EntityType="Self.User_Type_T" />
+          <EntitySet Name="User_Vip_T" EntityType="Self.User_Vip_T" />
+          <AssociationSet Name="FK_Order_T_Adddress_T" Association="Self.FK_Order_T_Adddress_T">
+            <End Role="Adddress_T" EntitySet="Adddress_T" />
+            <End Role="Order_T" EntitySet="Order_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Information_T_db_Shop_Type_T" Association="Self.FK_Shop_Information_T_db_Shop_Type_T">
+            <End Role="db_Shop_Type_T" EntitySet="db_Shop_Type_T" />
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_db_Shopimage_T_Shop_Information_T" Association="Self.FK_db_Shopimage_T_Shop_Information_T">
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+            <End Role="db_Shopimage_T" EntitySet="db_Shopimage_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_T_News_Type_T" Association="Self.FK_News_T_News_Type_T">
+            <End Role="News_Type_T" EntitySet="News_Type_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_T_User_Information_T" Association="Self.FK_News_T_User_Information_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_T_User_Type_T" Association="Self.FK_News_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="News_T" EntitySet="News_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_T_Order_T" Association="Self.FK_Order_T_Order_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="Order_T" EntitySet="Order_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_T_Shop_Information_T" Association="Self.FK_Order_T_Shop_Information_T">
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+            <End Role="Order_T" EntitySet="Order_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanxian_T_User_Menu" Association="Self.FK_Quanxian_T_User_Menu">
+            <End Role="User_Menu" EntitySet="User_Menu" />
+            <End Role="Quanxian_T" EntitySet="Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quanxian_T_User_Type_T" Association="Self.FK_Quanxian_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="Quanxian_T" EntitySet="Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Information_T_Shop_T" Association="Self.FK_Shop_Information_T_Shop_T">
+            <End Role="Shop_T" EntitySet="Shop_T" />
+            <End Role="Shop_Information_T" EntitySet="Shop_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Information_T_User_Type_T" Association="Self.FK_User_Information_T_User_Type_T">
+            <End Role="User_Type_T" EntitySet="User_Type_T" />
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Information_T_User_Vip_T" Association="Self.FK_User_Information_T_User_Vip_T">
+            <End Role="User_Vip_T" EntitySet="User_Vip_T" />
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+          </AssociationSet>
+          <EntitySet Name="Menus_User_T" EntityType="DB_CateringModel.Menus_User_T" />
+          <EntitySet Name="Pinglun_T" EntityType="DB_CateringModel.Pinglun_T" />
+          <EntitySet Name="User_Menus_Quanxian_T" EntityType="DB_CateringModel.User_Menus_Quanxian_T" />
+          <EntitySet Name="Zhunjia_T" EntityType="DB_CateringModel.Zhunjia_T" />
+          <AssociationSet Name="FK_User_Menus_Quanxian_T_Menus_User_T" Association="DB_CateringModel.FK_User_Menus_Quanxian_T_Menus_User_T">
+            <End Role="Menus_User_T" EntitySet="Menus_User_T" />
+            <End Role="User_Menus_Quanxian_T" EntitySet="User_Menus_Quanxian_T" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Menus_Quanxian_T_User_Information_T" Association="DB_CateringModel.FK_User_Menus_Quanxian_T_User_Information_T">
+            <End Role="User_Information_T" EntitySet="User_Information_T" />
+            <End Role="User_Menus_Quanxian_T" EntitySet="User_Menus_Quanxian_T" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Menus_User_T">
+          <Key>
+            <PropertyRef Name="Menus_ID" />
+          </Key>
+          <Property Name="Menus_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Menus_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Menus_icon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Menus_Url" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User_Menus_Quanxian_T" Relationship="DB_CateringModel.FK_User_Menus_Quanxian_T_Menus_User_T" FromRole="Menus_User_T" ToRole="User_Menus_Quanxian_T" />
+        </EntityType>
+        <EntityType Name="Pinglun_T">
+          <Key>
+            <PropertyRef Name="Pinglun_ID" />
+          </Key>
+          <Property Name="Pinglun_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pinglun_Countent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Pinglun_time" Type="DateTime" Precision="3" />
+          <Property Name="Shop_Information_Id" Type="Int64" />
+          <Property Name="User_ID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="User_Menus_Quanxian_T">
+          <Key>
+            <PropertyRef Name="Guanxi_ID" />
+          </Key>
+          <Property Name="Guanxi_ID" Type="Int32" Nullable="false" />
+          <Property Name="Menus_ID" Type="Int64" />
+          <Property Name="User_ID" Type="Int64" />
+          <NavigationProperty Name="Menus_User_T" Relationship="DB_CateringModel.FK_User_Menus_Quanxian_T_Menus_User_T" FromRole="User_Menus_Quanxian_T" ToRole="Menus_User_T" />
+          <NavigationProperty Name="User_Information_T" Relationship="DB_CateringModel.FK_User_Menus_Quanxian_T_User_Information_T" FromRole="User_Menus_Quanxian_T" ToRole="User_Information_T" />
+        </EntityType>
+        <EntityType Name="Zhunjia_T">
+          <Key>
+            <PropertyRef Name="ZhuiJia_ID" />
+          </Key>
+          <Property Name="ZhuiJia_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pinglun_ID" Type="Int64" />
+          <Property Name="User_ID" Type="Int64" />
+          <Property Name="Zhujia_Couent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_User_Menus_Quanxian_T_Menus_User_T">
+          <End Type="DB_CateringModel.Menus_User_T" Role="Menus_User_T" Multiplicity="0..1" />
+          <End Type="DB_CateringModel.User_Menus_Quanxian_T" Role="User_Menus_Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menus_User_T">
+              <PropertyRef Name="Menus_ID" />
+            </Principal>
+            <Dependent Role="User_Menus_Quanxian_T">
+              <PropertyRef Name="Menus_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Menus_Quanxian_T_User_Information_T">
+          <End Type="DB_CateringModel.User_Information_T" Role="User_Information_T" Multiplicity="0..1" />
+          <End Type="DB_CateringModel.User_Menus_Quanxian_T" Role="User_Menus_Quanxian_T" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Information_T">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="User_Menus_Quanxian_T">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_CateringModelStoreContainer" CdmEntityContainer="DB_CateringEntities">
+          <EntitySetMapping Name="Adddress_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Adddress_T">
+              <MappingFragment StoreEntitySet="Adddress_T">
+                <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+                <ScalarProperty Name="Address_City" ColumnName="Address_City" />
+                <ScalarProperty Name="Address_Diqu" ColumnName="Address_Diqu" />
+                <ScalarProperty Name="Address_Phone" ColumnName="Address_Phone" />
+                <ScalarProperty Name="Address_Lianxiren" ColumnName="Address_Lianxiren" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="db_Shop_Type_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.db_Shop_Type_T">
+              <MappingFragment StoreEntitySet="db_Shop_Type_T">
+                <ScalarProperty Name="Shop_Type_Id" ColumnName="Shop_Type_Id" />
+                <ScalarProperty Name="Shop_Type_Name" ColumnName="Shop_Type_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="db_Shopimage_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.db_Shopimage_T">
+              <MappingFragment StoreEntitySet="db_Shopimage_T">
+                <ScalarProperty Name="ShopimageID" ColumnName="ShopimageID" />
+                <ScalarProperty Name="shopImage" ColumnName="shopImage" />
+                <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.News_T">
+              <MappingFragment StoreEntitySet="News_T">
+                <ScalarProperty Name="News_ID" ColumnName="News_ID" />
+                <ScalarProperty Name="News_Type_ID" ColumnName="News_Type_ID" />
+                <ScalarProperty Name="News_Title" ColumnName="News_Title" />
+                <ScalarProperty Name="News_Image" ColumnName="News_Image" />
+                <ScalarProperty Name="News_Content" ColumnName="News_Content" />
+                <ScalarProperty Name="News_Describe" ColumnName="News_Describe" />
+                <ScalarProperty Name="News_Releasetime" ColumnName="News_Releasetime" />
+                <ScalarProperty Name="News_Backouttime" ColumnName="News_Backouttime" />
+                <ScalarProperty Name="News_IsorNo" ColumnName="News_IsorNo" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News_Type_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.News_Type_T">
+              <MappingFragment StoreEntitySet="News_Type_T">
+                <ScalarProperty Name="News_Type_ID" ColumnName="News_Type_ID" />
+                <ScalarProperty Name="News_Type_Name" ColumnName="News_Type_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Order_T">
+              <MappingFragment StoreEntitySet="Order_T">
+                <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+                <ScalarProperty Name="Order_time" ColumnName="Order_time" />
+                <ScalarProperty Name="Order_State" ColumnName="Order_State" />
+                <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
+                <ScalarProperty Name="Order_Count" ColumnName="Order_Count" />
+                <ScalarProperty Name="Order_Checked" ColumnName="Order_Checked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quanxian_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Quanxian_T">
+              <MappingFragment StoreEntitySet="Quanxian_T">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+                <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shop_Information_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Shop_Information_T">
+              <MappingFragment StoreEntitySet="Shop_Information_T">
+                <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+                <ScalarProperty Name="Shop_Information_Name" ColumnName="Shop_Information_Name" />
+                <ScalarProperty Name="Shop_Information_Price" ColumnName="Shop_Information_Price" />
+                <ScalarProperty Name="Shop_Information_Discount" ColumnName="Shop_Information_Discount" />
+                <ScalarProperty Name="Shop_Information_Count" ColumnName="Shop_Information_Count" />
+                <ScalarProperty Name="Shop_Information_Sell" ColumnName="Shop_Information_Sell" />
+                <ScalarProperty Name="Shop_Information_Deciaml" ColumnName="Shop_Information_Deciaml" />
+                <ScalarProperty Name="Shop_Type_Id" ColumnName="Shop_Type_Id" />
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="Shop_Information_image" ColumnName="Shop_Information_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shop_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Shop_T">
+              <MappingFragment StoreEntitySet="Shop_T">
+                <ScalarProperty Name="Shop_Id" ColumnName="Shop_Id" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Information_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.User_Information_T">
+              <MappingFragment StoreEntitySet="User_Information_T">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="User_Bieming" ColumnName="User_Bieming" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_PassWord" ColumnName="User_PassWord" />
+                <ScalarProperty Name="User_Phone" ColumnName="User_Phone" />
+                <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+                <ScalarProperty Name="User_Address" ColumnName="User_Address" />
+                <ScalarProperty Name="User_Number" ColumnName="User_Number" />
+                <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+                <ScalarProperty Name="User_Certification" ColumnName="User_Certification" />
+                <ScalarProperty Name="User_Vip_ID" ColumnName="User_Vip_ID" />
+                <ScalarProperty Name="User_JIfen" ColumnName="User_JIfen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Menu">
+            <EntityTypeMapping TypeName="DB_CateringModel.User_Menu">
+              <MappingFragment StoreEntitySet="User_Menu">
+                <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+                <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+                <ScalarProperty Name="Menu_Active" ColumnName="Menu_Active" />
+                <ScalarProperty Name="Menu_Icon" ColumnName="Menu_Icon" />
+                <ScalarProperty Name="Menu_Show" ColumnName="Menu_Show" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Type_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.User_Type_T">
+              <MappingFragment StoreEntitySet="User_Type_T">
+                <ScalarProperty Name="User_TyID" ColumnName="User_TyID" />
+                <ScalarProperty Name="User_TyName" ColumnName="User_TyName" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Vip_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.User_Vip_T">
+              <MappingFragment StoreEntitySet="User_Vip_T">
+                <ScalarProperty Name="User_Vip_ID" ColumnName="User_Vip_ID" />
+                <ScalarProperty Name="User_Vip_Name" ColumnName="User_Vip_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus_User_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Menus_User_T">
+              <MappingFragment StoreEntitySet="Menus_User_T">
+                <ScalarProperty Name="Menus_Url" ColumnName="Menus_Url" />
+                <ScalarProperty Name="Menus_icon" ColumnName="Menus_icon" />
+                <ScalarProperty Name="Menus_Name" ColumnName="Menus_Name" />
+                <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pinglun_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Pinglun_T">
+              <MappingFragment StoreEntitySet="Pinglun_T">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+                <ScalarProperty Name="Pinglun_time" ColumnName="Pinglun_time" />
+                <ScalarProperty Name="Pinglun_Countent" ColumnName="Pinglun_Countent" />
+                <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Menus_Quanxian_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.User_Menus_Quanxian_T">
+              <MappingFragment StoreEntitySet="User_Menus_Quanxian_T">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+                <ScalarProperty Name="Guanxi_ID" ColumnName="Guanxi_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zhunjia_T">
+            <EntityTypeMapping TypeName="DB_CateringModel.Zhunjia_T">
+              <MappingFragment StoreEntitySet="Zhunjia_T">
+                <ScalarProperty Name="Zhujia_Couent" ColumnName="Zhujia_Couent" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+                <ScalarProperty Name="ZhuiJia_ID" ColumnName="ZhuiJia_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -184,53 +184,71 @@
     <Compile Include="Models\Auth\News.cs" />
     <Compile Include="Models\Auth\ReponseData.cs" />
     <Compile Include="Models\Auth\UserIdentity.cs" />
-    <Compile Include="Models\DB\CaterModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CaterModel.Context.tt</DependentUpon>
+    <Compile Include="Models\DB\Adddress_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\CaterModel.cs">
+    <Compile Include="Models\DB\CateringModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DB\CaterModel.Designer.cs">
+    <Compile Include="Models\DB\CateringModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CaterModel.edmx</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\CateringModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CateringModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\db_Shopimage_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\db_Shop_Type_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Menus_User_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\News_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\News_Type_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Order_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Pinglun_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Quanxian_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Shop_Information_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\Shop_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\User_Information_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\User_Menu.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\User_Menus_Quanxian_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\User_Type_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DB\User_Vip_T.cs">
-      <DependentUpon>CaterModel.tt</DependentUpon>
+      <DependentUpon>CateringModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Zhunjia_T.cs">
+      <DependentUpon>CateringModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -312,15 +330,15 @@
     <Content Include="Images\shuiguo\7.jpg" />
     <Content Include="Images\shuiguo\8.jpg" />
     <Content Include="Images\shuiguo\9.jpg" />
-    <Content Include="Models\DB\CaterModel.Context.tt">
+    <Content Include="Models\DB\CateringModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CaterModel.edmx</DependentUpon>
-      <LastGenOutput>CaterModel.Context.cs</LastGenOutput>
+      <DependentUpon>CateringModel.edmx</DependentUpon>
+      <LastGenOutput>CateringModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DB\CaterModel.tt">
+    <Content Include="Models\DB\CateringModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CaterModel.edmx</DependentUpon>
-      <LastGenOutput>CaterModel.cs</LastGenOutput>
+      <DependentUpon>CateringModel.edmx</DependentUpon>
+      <LastGenOutput>CateringModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -338,12 +356,12 @@
     <Folder Include="image\" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\DB\CaterModel.edmx">
+    <EntityDeploy Include="Models\DB\CateringModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CaterModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CateringModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DB\CaterModel.edmx.diagram">
-      <DependentUpon>CaterModel.edmx</DependentUpon>
+    <Content Include="Models\DB\CateringModel.edmx.diagram">
+      <DependentUpon>CateringModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
   </ItemGroup>

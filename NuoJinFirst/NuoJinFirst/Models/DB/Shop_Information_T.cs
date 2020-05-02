@@ -17,21 +17,23 @@ namespace NuoJinFirst.Models.DB
         public Shop_Information_T()
         {
             this.db_Shopimage_T = new HashSet<db_Shopimage_T>();
+            this.Order_T = new HashSet<Order_T>();
         }
     
-        public int Shop_Information_Id { get; set; }
+        public long Shop_Information_Id { get; set; }
         public string Shop_Information_Name { get; set; }
         public Nullable<decimal> Shop_Information_Price { get; set; }
         public Nullable<decimal> Shop_Information_Discount { get; set; }
         public Nullable<int> Shop_Information_Count { get; set; }
         public Nullable<int> Shop_Information_Sell { get; set; }
         public string Shop_Information_Deciaml { get; set; }
-        public Nullable<int> Shop_Type_Id { get; set; }
-        public Nullable<int> Shop_Id { get; set; }
+        public Nullable<long> Shop_Type_Id { get; set; }
+        public Nullable<long> Shop_Id { get; set; }
         public string Shop_Information_image { get; set; }
     
         public virtual db_Shop_Type_T db_Shop_Type_T { get; set; }
         public virtual ICollection<db_Shopimage_T> db_Shopimage_T { get; set; }
+        public virtual ICollection<Order_T> Order_T { get; set; }
         public virtual Shop_T Shop_T { get; set; }
     }
 }

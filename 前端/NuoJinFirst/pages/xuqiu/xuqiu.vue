@@ -1,8 +1,8 @@
 <template>
 	<view>
         <view class="nj_header" style="display: flex;">
-		      <view class="uni-title uni-common-pl ct">需求类型选择:</view>
-		        <view class="uni-list">
+		      <view class="uni-title uni-common-pl ct">资讯类型</view>
+		        <view class="uni-list cs">
 		            <view class="uni-list-cell">
 		               
 		                <view class="uni-list-cell-db">
@@ -17,32 +17,34 @@
 		
 		
 		<view class="cu-form-group">
-			<view class="title">需求名称</view>
+			<view class="title">资讯标题</view>
 			<input placeholder="请输入" name="input" v-model="form.name"></input>
 		</view>
 		<view class="cu-form-group align-start">
-			<view class="title">需求描述</view>
+			<view class="title">资讯描述</view>
 			<textarea maxlength="-1" :disabled="modalName!=null" v-model="form.miaoshu" placeholder="请输入需求内容描述"></textarea>
 		</view>
 		
-	<view class="cu-bar bg-white margin-top">
-		<view class="action">
-			图片上传
-		</view>
-		<view class="action">
-			{{imgList.length}}/1
-		</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
-			<view class="bg-img" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
-			 <image :src="imgList[index]" mode="aspectFill"></image>
-				<view class="cu-tag bg-red" @tap.stop="DelImg" :data-index="index">
-					<text class='cuIcon-close'></text>
+	<view class="uni-list list-pd">
+		<view class="uni-list-cell cell-pd">
+			<view class="uni-uploader">
+				<view class="uni-uploader-head">
+					<view class="uni-uploader-title">点击可预览选好的图片</view>
+					<view class="uni-uploader-info">{{imageList.length}}/1</view>
 				</view>
-			</view>
-			<view class="solids" @tap="ChooseImage" v-if="imgList.length<4">
-				<text class='cuIcon-cameraadd'></text>
+				<view class="uni-uploader-body">
+					<view class="uni-uploader__files">
+						<block v-for="(image,index) in imageList" :key="index">
+							<view class="uni-uploader__file">
+								<view class="icon iconfont icon-shanchu" @tap="delimage(index)"></view>
+								<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage"></image>
+							</view>
+						</block>
+						<view class="uni-uploader__input-box">
+							<view class="uni-uploader__input" @tap="chooseImage"></view>
+						</view>
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -57,18 +59,46 @@
 		
 			<button class="cu-btn bg-blue margin-tb-sm lg">提交</button>
 		</view>
-		
+		<!--弹出公告-->
+		<uni-popup :show="showpopup" position="middle" mode="fixed" @hidePopup="hidePopup">
+			<view class="gonggao">
+				<view class="u-f-ajc">
+					<image src="../../static/common/addinput.png" mode="widthFix"></image>
+				</view>
+				<view>1.涉及黄色，政治，广告及骚扰信息</view>
+				<view>2.涉及黄色，政治，广告及骚扰信息</view>
+				<view>3.涉及黄色，政治，广告及骚扰信息</view>
+				<view>4.涉及黄色，政治，广告及骚扰信息</view>
+				<button type="default" @tap="hidePopup">朕知道了</button>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
+	import permision from "@/common/permission.js"
+	import uniPopup from "../../components/uni-popup/uni-popup.vue";
+	var sourceType = [
+		['camera'],
+		['album'],
+		['camera', 'album']
+	]
+	var sizeType = [
+		['compressed'],
+		['original'],
+		['compressed', 'original']
+	]
 	 
 	export default{
+		components:{
+			uniPopup
+		},
 		data(){
 			return{   
-				//xianshi:false,
+				showpopup:true,
 				  title: 'picker',
 				index: 1,
+				
 				    arryObject: [{
 				                              id: 1,
 				                              name: '行业新闻' ,
@@ -94,7 +124,17 @@
 				                       
 				                      ],
 				 
-				imgList: [],
+			
+				
+				imageList: [],
+				sourceTypeIndex: 2,
+				sourceType: ['拍照', '相册', '拍照或相册'],
+				sizeTypeIndex: 2,
+				sizeType: ['压缩', '原图', '压缩或原图'],
+				countIndex: 8,
+				count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+				
+				
 				modalName: null,
 				textareaAValue: '',
 				textareaBValue: '',
@@ -111,24 +151,10 @@
 			/* this.quanxian(); */
 		},
 		methods:{
-			
-		
-			
-			DelImg(e) {
-				uni.showModal({
-					title: '小姐姐小哥哥',
-					content: '确定要删除这张图片嘛？',
-					cancelText: '再看看',
-					confirmText: '再见',
-					success: res => {
-						if (res.confirm) {
-							this.imgList.splice(e.currentTarget.dataset.index, 1)
-						}
-					}
-				})
+			hidePopup(){
+				this.showpopup=false;
+				
 			},
-			
-			
 			
 			  bindPickerChange: function(e) {
 				  this.index = e.target.value
@@ -151,7 +177,7 @@
 				 const token = uni.getStorageSync('token');
 				 uni.uploadFile({
 				     url : 'http://localhost:58793/Api/Home/content',
-				     filePath: this.imgList[0],
+				     filePath: this.imageList[0],
 					
 					 fileType:'image',
 				     name: 'file',
@@ -173,49 +199,110 @@
 					  that.form.content="",
 					  that.form.miaoshu="",
 					  
-					 that.imgList=[]
+					 that.imageList=[]
 					 }
 				    });
 		}
-			 },
-			//上传图片
-			ChooseImage() {
-				uni.chooseImage({
-					count: 1, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album'], //从相册选择
-					success: (res) => {
-						if (this.imgList.length != 0) {
-							this.imgList = this.imgList.concat(res.tempFilePaths);
-							 // const uploadTask = uni.uploadFile({
-							 // url : '',
-							 //      filePath: res.tempFilePaths[0],
-							 //      name: 'file',
-							 //      formData: {
-							 //       'user': 'test'
-							 //      },
-							 //      success: function (uploadFileRes) {
-							 //       console.log(uploadFileRes.data);
-							 //      }
-							 //     });
-						} else {
-							this.imgList = res.tempFilePaths
-						};
-						console.log(this.imgList);
+		},	
+		
+		//删除图片
+		delimage(index){
+			uni.showModal({
+				title:"提示",
+				content:"确定要删除这张图片吗",
+				success:(res)=>{
+					if(res.confirm){
+						this.imageList.splice(index,1)
 					}
-				});
+				}
+			})
 			},
-			ViewImage(e) {
-				uni.previewImage({
-					urls: this.imgList,
-					current: e.currentTarget.dataset.url
-				});
-			},
+			//上传图片
+		chooseImage: async function() {
+			// #ifdef APP-PLUS
+			// TODO 选择相机或相册时 需要弹出actionsheet，目前无法获得是相机还是相册，在失败回调中处理
+			if (this.sourceTypeIndex !== 2) {
+				let status = await this.checkPermission();
+				if (status !== 1) {
+					return;
+				}
+			}
+			// #endif
+		
+			if (this.imageList.length === 1) {return;}
+			uni.chooseImage({
+				sourceType: sourceType[this.sourceTypeIndex],
+				sizeType: sizeType[this.sizeTypeIndex],
+				count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
+				success: (res) => {
+					this.imageList = this.imageList.concat(res.tempFilePaths);
+				},
+				fail: (err) => {
+					// #ifdef APP-PLUS
+					if (err['code'] && err.code !== 0 && this.sourceTypeIndex === 2) {
+						this.checkPermission(err.code);
+					}
+					// #endif
+					// #ifdef MP
+					uni.getSetting({
+						success: (res) => {
+							let authStatus = false;
+							switch (this.sourceTypeIndex) {
+								case 0:
+									authStatus = res.authSetting['scope.camera'];
+									break;
+								case 1:
+									authStatus = res.authSetting['scope.album'];
+									break;
+								case 2:
+									authStatus = res.authSetting['scope.album'] && res.authSetting['scope.camera'];
+									break;
+								default:
+									break;
+							}
+							if (!authStatus) {
+								uni.showModal({
+									title: '授权失败',
+									content: 'Hello uni-app需要从您的相机或相册获取图片，请在设置界面打开相关权限',
+									success: (res) => {
+										if (res.confirm) {
+											uni.openSetting()
+										}
+									}
+								})
+							}
+						}
+					})
+					// #endif
+				}
+			})
+		},
+		
+		previewImage: function(e) {
+			var current = e.target.dataset.src
+			uni.previewImage({
+				current: current,
+				urls: this.imageList
+			})
+		},
 		}
+		
 	}
 </script>
 
 <style>
+	.gonggao{
+		width: 500upx;
+	}
+	.gonggao image{
+		width: 75%;
+		margin-bottom: 20upx;
+	}
+	.gonggao button{
+		margin-top: 20upx;
+		background: #FFE934;
+		color: #171606;
+	}
 	.nj_header{
 		background-color: white;
 		width: 100%;
@@ -225,8 +312,10 @@
 	}
 	.ct{
 		font-size: 30upx;
-		margin-left: 30upx;
+		margin-left: 4upx;
 		line-height: 100upx;
+		width: 213rpx;
+		
 	}
 	.tex_height{
 		height: 500upx;
@@ -237,4 +326,33 @@
 	.input-xuanzeqi{
 		border: 1px solid black;
 	}
+	.cs
+	{
+		margin-left: 9rpx;
+		justify-content: center;
+
+	}
+	.cell-pd {
+		padding: 22rpx 30rpx;
+	}
+
+	.list-pd {
+		margin-top: 50rpx;
+	}
+	.uni-uploader__file{
+		position:relative;
+	}
+	.icon-shanchu{
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1;
+		background: #333333;
+		color: #FFFFFF;
+		padding: 2upx 10upx;
+		border-radius: 10upx;
+	}
+	
+		
+	
 </style>

@@ -1,6 +1,22 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		
+		{
+			"path": "pages/xuqiu/xuqiu",
+			"style": {
+				"navigationBarTitleText": "资讯"
+			}
+		},
+		
+		{
+			"path": "pages/School/study",
+			"style":{
+						"navigationStyle":"custom",
+						"navigationBarBackgroundColor":"#F37B1D"
+						
+					
+					}
+		},
 		
 		{
 			"path": "pages/xuanqujiaose/xuanse",
@@ -31,12 +47,7 @@
 		},
 	
 	
-		{
-			"path": "pages/xuqiu/xuqiu",
-			"style": {
-				"navigationBarTitleText": "需求"
-			}
-		},
+	
 		{
 			"path": "pages/sahngcheng/sahngcheng",
 			"style":{

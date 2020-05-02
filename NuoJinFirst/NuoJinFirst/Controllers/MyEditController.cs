@@ -46,15 +46,15 @@ namespace NuoJinFirst.Controllers
         /// 行业文章
         /// </summary>
         /// <returns></returns>
-        [Route("Edit")]
-        // [Myauth]
-        [HttpGet]
-        public async Task<IHttpActionResult> AllGets()
-        {
-            // int id = ((UserIdentity)User.Identity).Id;
-            var list=from p in db.User_Information_T.Where(p=>p.)
+        //[Route("Edit")]
+        //// [Myauth]
+        //[HttpGet]
+        //public async Task<IHttpActionResult> AllGets()
+        //{
+        //    // int id = ((UserIdentity)User.Identity).Id;
+        //   // var list=from p in db.User_Information_T.Where(p=>p.)
 
-        }
+        //}
 
     }
 }

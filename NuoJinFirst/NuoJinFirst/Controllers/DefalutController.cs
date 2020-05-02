@@ -52,13 +52,15 @@ namespace NuoJinFirst.Controllers
         [HttpGet]
         [Route("AllContent")]
         public async Task<IHttpActionResult> resultAll(string Shop_Information_Name)
+            
         {
-            if (Shop_Information_Name == null)
+            string s = Shop_Information_Name;
+            if (s == null)
             {
                 var res = await Task.Run(() => (from p in db.Shop_Information_T
                                                   select new
                                                   {
-                                                      p.Shop_Information_Id,
+                                                    p.Shop_Information_Id ,
                                                       p.Shop_Information_Name,
                                                       p.Shop_Information_Price,
                                                       p.Shop_Information_Sell,
@@ -70,7 +72,7 @@ namespace NuoJinFirst.Controllers
             }
             else
             {
-            var lists =await Task.Run(()=> (from p in db.Shop_Information_T.Where(p=>p.Shop_Information_Name.Contains(Shop_Information_Name))
+            var lists =await Task.Run(()=> (from p in db.Shop_Information_T.Where(p=>p.Shop_Information_Name.Contains(s))
                       //  join s in db.db_Shopimage_T on p.Shop_Information_Id equals s.Shop_Information_Id
                         select new
                         {

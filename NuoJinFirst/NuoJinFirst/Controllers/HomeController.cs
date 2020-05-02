@@ -18,31 +18,31 @@ namespace NuoJinFirst.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HomeController : ApiController
     { 
-        public int? idd { get; set; }
+        public long? idd { get; set; }
         private DB_CateringEntities db = new DB_CateringEntities();
         /// <summary>
         /// 资讯发布
         /// </summary>
         /// <returns></returns>
         [Route("content")]
-        [Myauth]
+       // [Myauth]
 
         [HttpPost]
        
         public async Task<IHttpActionResult>  AllForm()
 
         {
-           
 
-            
 
-            //    if (!Request.Content.IsMimeMultipartContent())
-            //    {
-            //        return Json(new { messg = "您的信息为空" });
-            //    }
-            //    else
-            //    {
-            var s = DateTime.Now.ToString();
+
+
+            if (!Request.Content.IsMimeMultipartContent())
+            {
+                return Json(new { messg = "您的信息为空" });
+            }
+            else
+            {
+                var s = DateTime.Now.ToString();
             HttpPostedFile file = HttpContext.Current.Request.Files["file"];
 
             string News_Title = HttpContext.Current.Request["News_Title"];
@@ -89,7 +89,7 @@ namespace NuoJinFirst.Controllers
 
 
                 return Json(new { messg = "更新失败" });
-        //    }
+            }
  
         }
         [Route("Allpage")]
