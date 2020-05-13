@@ -21,10 +21,10 @@ namespace NuoJinFirst.Models.DB
         public Nullable<int> Order_State { get; set; }
         public Nullable<long> Address_Id { get; set; }
         public Nullable<int> Order_Count { get; set; }
-        public string Order_Checked { get; set; }
+        public Nullable<int> Order_Checked { get; set; }
+        public Nullable<decimal> Order_Maney { get; set; }
     
         public virtual Adddress_T Adddress_T { get; set; }
         public virtual User_Information_T User_Information_T { get; set; }
-        public virtual Shop_Information_T Shop_Information_T { get; set; }
     }
 }

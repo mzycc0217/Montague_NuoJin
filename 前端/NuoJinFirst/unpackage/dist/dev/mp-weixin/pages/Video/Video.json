@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "视频发布",
+  "usingComponents": {
+    "easy-upload": "/components/easy-upload/easy-upload"
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="jvascript:;"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     -->
+    <script>
+        var datas=[
+            { name: 'zs', sex: "男", subject: '语文', score: 90 },
+            { name: 'ls', sex: "男", subject: '数学', score: 80 },
+            { name: 'ww', sex: "女", subject: '英语', score: 60 },
+            { name: 'zl', sex: "女", subject: '英语', score: 100 },
+            { name: 'xs', sex: "女", subject: '英语', score: 60 },
+            { name: 'dc', sex: "女", subject: '英语', score: 70 }
+        ]
+        var headDatas = ['姓名', '性别', '科目', '成绩', '操作'];
+        var box=document.getElementById("box");
+        var table=document.createElement("table");
+         /* 将创建的table添加到box里面去 */
+        box.appendChild(table);
+        table.width="400px";
+        table.border="1px";
+        /* 动态创建thead */
+        var thead=document.createElement("thead");
+        table.appendChild(thead);
+        thead.style.height="20px";
+        thead.style.backgroundColor="purple";
+        /* 动态创建tr */
+        var tr=document.createElement("tr");
+        thead.appendChild(tr);
+        /* 循环遍历tr */
+        for(var i=0;i<headDatas.length;i++){
+            var th=document.createElement("th");
+            tr.appendChild(th);
+            th.innerText=headDatas[i];
+         }
+         /* 创建tbody */
+         var tbody=document.createElement("tbody");
+         tbody.style.textAlign="center";
+         table.appendChild(tbody);
+         /* 循环遍历datas内容 */
+         for(var i=0;i<datas.length;i++){
+             var data=datas[i];
+            var tr=document.createElement("tr");
+            tbody.appendChild(tr);
+            /* 遍历data */
+            for(var key in data){
+                var td=document.createElement("td");
+                tr.appendChild(td);
+                td.innerText=data[key];
+            }
+            /* 添加a标签 删除 */
+            var a=document.createElement("a");
+            var th=document.createElement("th");
+            th.appendChild(a);
+            tr.appendChild(th);
+            a.innerText="删除";
+            a.href="javascript:;";
+            a.onclick=function(e){
+                var name=prompt("我这么可爱，真的要删除我吗？输入yes我就消失啦");
+                if(name=="yes"){
+                    tbody.removeChild(this.parentNode.parentNode);
+                }
+            }   
+
+         }
+       
+
+       
+        
+    </script>
+</body>
+</html>

@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-popup/uni-popup":1};
+/******/ 		var cssChunks = {"components/easy-upload/easy-upload":1,"components/uni-popup/uni-popup":1,"components/Video/video":1,"components/commin-list/commin-list":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-popup/uni-popup":"components/uni-popup/uni-popup"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/pick-regions/pick-regions":"components/pick-regions/pick-regions","components/easy-upload/easy-upload":"components/easy-upload/easy-upload","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/Video/video":"components/Video/video","components/commin-list/commin-list":"components/commin-list/commin-list","components/header":"components/header"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #csst{
+        background: red;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+</style>
+<body>
+  <!--<input type="button" value="确定">-->  
+  <div id="csst">
+
+  </div>
+</body>
+</html>
+<script>
+    var ss=42789045446643712;
+   
+    var str="<input type='button' value='确定' onclick='ct("+ss+")'>"
+    document.createElement("div")
+    document.write(str)
+   
+    
+    function ct(id){ 
+        console.log(id)
+        var st=BigInt(id)
+        console.log(st)
+      if(id==st){
+          console.log(true);
+      }
+
+       
+
+        
+        
+    } 
+    var ss=document.querySelector("input");
+    var  tt=document.querySelector("#csst")
+    tt.appendChild(ss)
+       
+    
+    
+</script>

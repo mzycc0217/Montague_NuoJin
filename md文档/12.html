@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #ct{
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 20%;
+    }
+</style>
+<body>
+    <div id="ct">
+       <input type="text" name="name"> 
+    </div>
+</body>
+</html>
+<script>
+    var doc=document.getElementsByTagName("name")
+
+     
+ 
+  
+
+ /* doc.onclick=function(e){
+      console.log("111")
+          prompt("ssssss")
+  }*/
+
+var object=[
+ {id:1,name:"张三"},
+ {id:2,name:"李四"},
+
+ {id:3,name:"王麻子"},
+
+ {id:4,name:"张三1"},
+
+ {id:5,name:"张三2"},
+
+ {id:6,name:"张三3"},
+
+
+
+];
+
+    var st1="<table border='1'>"
+    var st2="<tbody>"
+  var st5="<tr>"
+    var st6="</tr>"
+    var st7="<td>"
+    var st8="</td>"
+    var st3="</tbody>"
+    var st4="</table>"
+
+  
+  
+  
+
+ document.write(st1);
+ document.write(st2);
+   document.write(st5);
+  document.write(st7);
+  document.write("id")
+  document.write(st8);
+ document.write(st7);
+document.write("姓名")
+   document.write(st8);
+   document.write(st6);
+    for(let i=0;i<object.length;i++){
+ 
+     document.write(st5);
+      document.write(st7);
+         document.write(object[i].id)
+        document.write(st8);
+
+      document.write(st7);
+    document.write(object[i].name)
+             document.write(st8);
+
+        document.write(st6);
+
+    }
+     document.write(st3);
+    document.write(st4); 
+    
+  
+
+</script>

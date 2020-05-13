@@ -1,7 +1,7 @@
-<template class="qll">
+<template>
 	<view>
 		
-		<view style="width: 100%; height: 100upx;"></view>
+		
 		<!--顶部tab-->
 		<view class="uni-tab-bar">
 			<scroll-view scroll-x class="uni-swiper-tab">
@@ -13,47 +13,29 @@
 				</block>
 			</scroll-view>
 		</view>
-		<!--下面列表-->
-		<view class="index-list">
-			<view class="index-list1 u-f-ac">
-				<view class="u-f-ac">
-					<image src="../../static/Logo/logo.png" mode="widthFix" lazy-load></image>
-					昵称
-				</view>
-				<view class="u-f-ac">
-					<view class="icon"></view>关注
-				</view>
-			</view>
-			<view class="index-list2">我是标题</view>
-			<view class="index-list3">
-				<image src="../../static/images/daxiong.jpg" mode="widthFix" lazy-load></image>
-			</view>
-			<view class="index-list4">
-				<view>
-					<view class="u-f-ac">10</view>
-					<view class="u-f-ac">10</view>
-				</view>
-				<view>
-					<view class="u-f-ac"> 10</view>
-					<view class="u-f-ac">10</view>
-				</view>
-			</view>
-			
-			
-			
-		</view>
+		
+		
+		<view>
+		<commlist v-if="tabIndex==1?true:false"></commlist>
+		<listVideo v-if="tabIndex==2?true:false"></listVideo>
+	</view>
 	</view>
 </template>
 
 <script>
+	import commlist from "../../components/commin-list/commin-list.vue"
+	import listVideo from "../../components/Video/video.vue"
 	export default{
+		components:{
+			commlist,
+			listVideo
+		},
 		data(){
 		return{
 			tabIndex:1,
 			taBars:[
 				{name:"行业文章",id:1},
 				{name:"行业视频",id:2},
-				
 			]
 		}	
 		},
@@ -72,6 +54,11 @@
 </script>
 
 <style>
+		
+		
+	page{
+		background-color: white;
+	}
    .u-f ,.u-f-ac, .u-f-ajc{
 	   display: flex;
    }
@@ -94,15 +81,16 @@
 	}
 	.active .swiper-tab-line{
 		border-bottom: 6upx solid #FEDE33; 
-		width: 120UPX;
+		width: 180UPX;
 		margin: auto;
 		border-top:6upx solid #FEDE33;
 	}
 	
-	
+/* 	
 	.index-list{
-		padding: 20upx;
+		padding: 40rpx;
 		border-bottom: 1upx solid #efefef;
+		background-color: ;
 	}
 	.index-list1{
 		
@@ -114,8 +102,9 @@
 		color: #999999;
 	}
 	.index-list1>view:first-child>image{
-		width: 90upx;
-		height: 90upx;
+		width: 60rpx;
+		height: 60rpx;
+
 		border-radius: 100%;
 		margin-right: 14upx;
 	}
@@ -134,11 +123,12 @@
 		font-weight: bold;
 	}
 	.index-list3{
-		padding-top: 15upx;
-	}
-	.index-list3>image{
+		/* padding-top: 15upx; }*/
+	
+	/* .index-list3>image{
 		width: 100%;
-		height: auto;
+		
+		height: 430rpx;
 		
 		border-radius: 20upx;
 	}
@@ -168,5 +158,5 @@
 	}
 	.index-list4>view>view:first-child{
 		margin-right: 10upx;
-	}
+	} */ 
 </style>

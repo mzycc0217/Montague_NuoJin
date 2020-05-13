@@ -28,19 +28,22 @@ namespace NuoJinFirst.Models.DB
         public DbSet<Adddress_T> Adddress_T { get; set; }
         public DbSet<db_Shop_Type_T> db_Shop_Type_T { get; set; }
         public DbSet<db_Shopimage_T> db_Shopimage_T { get; set; }
+        public DbSet<Menus_User_T> Menus_User_T { get; set; }
         public DbSet<News_T> News_T { get; set; }
         public DbSet<News_Type_T> News_Type_T { get; set; }
         public DbSet<Order_T> Order_T { get; set; }
+        public DbSet<Pinglun_T> Pinglun_T { get; set; }
         public DbSet<Quanxian_T> Quanxian_T { get; set; }
         public DbSet<Shop_Information_T> Shop_Information_T { get; set; }
         public DbSet<Shop_T> Shop_T { get; set; }
         public DbSet<User_Information_T> User_Information_T { get; set; }
         public DbSet<User_Menu> User_Menu { get; set; }
+        public DbSet<User_Menus_Quanxian_T> User_Menus_Quanxian_T { get; set; }
         public DbSet<User_Type_T> User_Type_T { get; set; }
         public DbSet<User_Vip_T> User_Vip_T { get; set; }
-        public DbSet<Menus_User_T> Menus_User_T { get; set; }
-        public DbSet<Pinglun_T> Pinglun_T { get; set; }
-        public DbSet<User_Menus_Quanxian_T> User_Menus_Quanxian_T { get; set; }
         public DbSet<Zhunjia_T> Zhunjia_T { get; set; }
+        public DbSet<QuanxianS_T> QuanxianS_T { get; set; }
+        public DbSet<Video_T> Video_T { get; set; }
+        public DbSet<wenzhang_T> wenzhang_T { get; set; }
     }
 }

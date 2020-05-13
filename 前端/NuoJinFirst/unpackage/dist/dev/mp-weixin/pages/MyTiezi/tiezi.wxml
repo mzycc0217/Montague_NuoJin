@@ -1,0 +1,1 @@
+<view><block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="nj_card"><view class="nj_image"><image src="{{item.m0}}"></image></view><view class="nj_right"><view>{{item.$orig.News_Title}}</view><view>{{item.$orig.News_Describe+''}}</view></view><view class="datas">{{item.$orig.News_Releasetime}}</view></view></block></view>

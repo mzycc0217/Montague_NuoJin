@@ -67,6 +67,8 @@
 		},
 	
 	    methods:{
+			
+			
 			yanzhengma(){
 				var its =this;
 				if(this.form.phone.length!=11){
@@ -108,7 +110,7 @@
 				if(this.form.phone.length>=2&&this.form.password>=6)
 				{
 				uni.request({
-					url:'http://localhost:58793/Api/Login/login',
+					url:this.url+'Login/login',
 					method:'POST',
 				
 					data:{
@@ -120,12 +122,12 @@
 					if(res.data.Code=="200"){
 					
 				
-					//储存token
+					//储存tokenas
 					uni.setStorageSync("token",res.data.Data)
 					uni.setStorageSync("images",res.data.images)
 					uni.setStorageSync("name",res.data.LoginName)
-					uni.switchTab({
-						url:'../index/index',
+					uni.navigateTo({
+						url:'../xuanqujiaose/xuanse',
 					})
 				}
 					else

@@ -15,7 +15,11 @@ namespace NuoJinFirst.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LoginDefController : ApiController
     {
-        private DB_CateringEntities db = new DB_CateringEntities();
+       private DB_CateringEntities db = new DB_CateringEntities();
+        /// <summary>
+        /// 获取角色
+        /// </summary>
+        /// <returns></returns>
         [Route("jaose")]
         [HttpGet]
         public async Task<IHttpActionResult> ActionResult()

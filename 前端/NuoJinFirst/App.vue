@@ -19,5 +19,7 @@
 	 @import './common/uni.css';
 	  @import './common/animate.css';
 	   @import './common/icon.css';
+	      @import './common/common.css';
 	   @import './static/menu_ICon/icon.css';
+	     @import './static/menu_ICon/iconfont.css';
 </style>

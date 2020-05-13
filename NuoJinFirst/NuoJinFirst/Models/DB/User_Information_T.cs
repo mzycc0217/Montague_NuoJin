@@ -19,6 +19,8 @@ namespace NuoJinFirst.Models.DB
             this.News_T = new HashSet<News_T>();
             this.Order_T = new HashSet<Order_T>();
             this.User_Menus_Quanxian_T = new HashSet<User_Menus_Quanxian_T>();
+            this.Video_T = new HashSet<Video_T>();
+            this.wenzhang_T = new HashSet<wenzhang_T>();
         }
     
         public long User_ID { get; set; }
@@ -39,5 +41,7 @@ namespace NuoJinFirst.Models.DB
         public virtual User_Type_T User_Type_T { get; set; }
         public virtual User_Vip_T User_Vip_T { get; set; }
         public virtual ICollection<User_Menus_Quanxian_T> User_Menus_Quanxian_T { get; set; }
+        public virtual ICollection<Video_T> Video_T { get; set; }
+        public virtual ICollection<wenzhang_T> wenzhang_T { get; set; }
     }
 }

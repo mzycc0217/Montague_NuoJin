@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "三级城市联动",
+  "usingComponents": {
+    "city-chiden": "/pages/components/chenguanhua-city/cityChiden"
+  }
+}

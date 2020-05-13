@@ -14,12 +14,6 @@ namespace NuoJinFirst.Models.DB
     
     public partial class Shop_Information_T
     {
-        public Shop_Information_T()
-        {
-            this.db_Shopimage_T = new HashSet<db_Shopimage_T>();
-            this.Order_T = new HashSet<Order_T>();
-        }
-    
         public long Shop_Information_Id { get; set; }
         public string Shop_Information_Name { get; set; }
         public Nullable<decimal> Shop_Information_Price { get; set; }
@@ -32,8 +26,6 @@ namespace NuoJinFirst.Models.DB
         public string Shop_Information_image { get; set; }
     
         public virtual db_Shop_Type_T db_Shop_Type_T { get; set; }
-        public virtual ICollection<db_Shopimage_T> db_Shopimage_T { get; set; }
-        public virtual ICollection<Order_T> Order_T { get; set; }
         public virtual Shop_T Shop_T { get; set; }
     }
 }

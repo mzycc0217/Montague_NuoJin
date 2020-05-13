@@ -1,5 +1,8 @@
 {
-  "navigationStyle": "custom",
+  "navigationBarTitleText": "行业内容",
   "navigationBarBackgroundColor": "#F37B1D",
-  "usingComponents": {}
+  "usingComponents": {
+    "commlist": "/components/commin-list/commin-list",
+    "list-video": "/components/Video/video"
+  }
 }

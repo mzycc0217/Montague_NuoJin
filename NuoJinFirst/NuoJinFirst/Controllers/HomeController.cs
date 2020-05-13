@@ -59,8 +59,8 @@ namespace NuoJinFirst.Controllers
             string path = HttpContext.Current.Server.MapPath("~/image/");
 
             file.SaveAs(path + st);
-            int id = ((UserIdentity)User.Identity).Id;
-            var list = from T in db.User_Information_T.Where(T => T.User_ID == id) select T;
+           // int id = ((UserIdentity)User.Identity).Id;
+            var list = from T in db.User_Information_T.Where(T => T.User_ID == 1) select T;
             foreach (var item in list)
             {
                 this.idd = item.User_TyID;
@@ -68,7 +68,7 @@ namespace NuoJinFirst.Controllers
             var time = DateTime.Now;
             News_T news = await Task.Run(() => new News_T
             {
-                User_ID = id,
+                User_ID = 1,
                 User_TyID =this.idd,
                  News_Type_ID = News_Type_ID,//自己选择
                 News_Title = News_Title,
@@ -107,6 +107,32 @@ namespace NuoJinFirst.Controllers
             //{
                 return Json(new { code = 200 });
             //}
+
+        }
+        [Route("StudyNwes")]
+        // [Myauth]
+
+        [HttpGet]
+
+        public async Task<IHttpActionResult> GetStudyNwes()
+        {
+           // int id = ((UserIdentity)User.Identity).Id;
+
+            var rest = await Task.Run(()=> from p in db.News_T.Where(p => p.News_ID == 1)
+                       select new
+                       {
+
+                           p.News_Title,
+                           p.News_Image,
+                          // p.News_Content,
+                           p.News_IsorNo,
+                           p.News_Describe,
+                           p.News_Releasetime
+
+                       });
+
+            return Json(rest);
+
 
         }
     }

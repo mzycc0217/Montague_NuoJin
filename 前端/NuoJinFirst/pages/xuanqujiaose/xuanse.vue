@@ -40,14 +40,19 @@
 			 
 			 
 			select(id){
+				//存值vuex
+				  //  this.$store.commit("jiaoseID",this.id);
+				  console.log(id);
+				  this.$store.state.jiaoseID=id;
 				uni.switchTab({
 					url:"../my/my"
 				})
 			},
 			
 			reques(){
+				console.log(this.url)
 				uni.request({
-					url:"http://localhost:58793/Api/logins/jaose",
+					url:this.url+'logins/jaose',
 					method:"GET",
 					success: (res) => {
 						console.log(res.data)

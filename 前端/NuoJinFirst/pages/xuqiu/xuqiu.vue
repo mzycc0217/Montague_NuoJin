@@ -174,17 +174,17 @@
 			}	
 			else
 			{
-				 const token = uni.getStorageSync('token');
+				 //const token = uni.getStorageSync('token');
 				 uni.uploadFile({
-				     url : 'http://localhost:58793/Api/Home/content',
+				     url : this.url+'Home/content',
 				     filePath: this.imageList[0],
-					
+					  
 					 fileType:'image',
 				     name: 'file',
 					   header:{
 						   
 						   "Content-Type": "multipart/form-data",
-					   "token":token
+					  // "token":token
 					   },
 
 				     formData: {

@@ -15,7 +15,7 @@
 	box-shadow: 5px 5px 2px #E4E4E4;
 	background: #EEEEEE;
 	width: 360rpx;
-	height: 460rpx;
+	height:509rpx;
 	border-radius: 15rpx;
 	box-shadow: #999999;
 	margin-top: 30rpx;
@@ -26,10 +26,20 @@
 	width: 360rpx;
 	height: 300rpx;
 }
-.block-first>view:nth-child(2) {
-	font-weight: 700;
-	
-	margin-left: 20rpx;
+.cst{
+			font-weight: 700;
+	       display: -webkit-box;
+	       display: -webkit-flex;
+	       display: flex;
+	       margin-left: 22rpx;
+}
+.cst>view:last-child {
+	color: #797979;
+	font-weight: 400;
+     margin-left: 135rpx;
+}
+.cst>view:last-child>text {
+    color: #D123BB;
 }
 .block-first>view:nth-child(3) {
 	font-size: 30rpx;

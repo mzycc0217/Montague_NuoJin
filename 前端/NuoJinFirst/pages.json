@@ -1,33 +1,78 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		
-		{
+			
+				{
+					"path": "pages/address/address",
+					"style": {
+						"navigationBarTitleText": "我的地址"
+					}
+				},
+				
+				{
+					"path": "pages/xuanqujiaose/xuanse",
+					"style":{
+								"navigationStyle":"custom",
+								"navigationBarBackgroundColor":"#F37B1D"
+								
+							
+							}
+				},	
+					{
+					"path": "pages/Video/Video",
+					"style": {
+						"navigationBarTitleText": "视频发布"
+					}
+				},
+				{
+						"path": "pages/webzhang/wenzhang",
+						"style": {
+							"navigationBarTitleText": "文章发布"
+						}
+					},		
+				
+				
+				{
 			"path": "pages/xuqiu/xuqiu",
 			"style": {
 				"navigationBarTitleText": "资讯"
 			}
 		},
-		
-		{
-			"path": "pages/School/study",
-			"style":{
-						"navigationStyle":"custom",
-						"navigationBarBackgroundColor":"#F37B1D"
-						
-					
+				{
+					"path": "pages/guwuche/shoping",
+					"style": {
+						"navigationBarTitleText": "购物车"
 					}
-		},
-		
-		{
-			"path": "pages/xuanqujiaose/xuanse",
-			"style":{
-						"navigationStyle":"custom",
-						"navigationBarBackgroundColor":"#F37B1D"
-						
-					
+				},
+				
+				
+				{
+					"path": "pages/Login/login",
+					"style": {
+						"navigationBarTitleText": "登录"
 					}
-		},
+				},
+				
+				{
+					"path": "pages/sahngcheng/sahngcheng",
+					"style":{
+					"navigationStyle":"custom",
+					"navigationBarBackgroundColor":"#F37B1D",
+					 "app-plus":{
+						"titleNView":false
+						
+				}
+				}
+				},
+				{
+					"path": "pages/Decimal/Decimal",
+					"style": {
+						"navigationBarTitleText": "详情"
+					}
+				},
+				
+				
 		
+	
 		{
 			"path": "pages/my/my",
 			"style":{
@@ -39,26 +84,35 @@
 			}
 			}
 		},
+			
+		
+		
+		
 		{
-			"path": "pages/Login/login",
-			"style": {
-				"navigationBarTitleText": "登录"
-			}
-		},
-	
-	
-	
-		{
-			"path": "pages/sahngcheng/sahngcheng",
+			"path": "pages/School/study",
 			"style":{
-			"navigationStyle":"custom",
-			"navigationBarBackgroundColor":"#F37B1D",
-			 "app-plus":{
-				"titleNView":false
-				
-		}
-		}
-		},	{
+						"navigationBarTitleText": "行业内容",
+						"navigationBarBackgroundColor":"#F37B1D"
+						
+					
+					}
+		},
+		{
+			"path": "pages/MyTiezi/tiezi",
+			"style":{
+						"navigationBarTitleText": "我发布的贴子",
+						"navigationBarBackgroundColor":"#F37B1D"
+						
+					
+					}
+		},
+
+	
+
+	
+	
+	
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "公司简介"
@@ -74,14 +128,14 @@
 				
 		}
 		}
-		},
+		}
 		
-		{
+	/* 	{
 			"path": "pages/Decimal/Decimal",
 			"style": {
 				"navigationBarTitleText": "详情"
 			}
-		}
+		} */
 		
 	],
 	"globalStyle": {

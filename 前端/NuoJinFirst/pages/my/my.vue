@@ -11,8 +11,8 @@
 			</view>
 			<view class="nj-ri">
 			<view class="nj-phone">
-				<view>1804996890</view>
-				<view class="nj-guanli"><text>管理员</text></view>
+				<view>{{name}}</view>
+				<view class="nj-guanli"><text style="font-weight: bold;">积分  {{jifen}}</text></view>
 			</view>
 			<view class="nj_wenzi">诺金科技有限公司</view>
 			</view>
@@ -22,9 +22,21 @@
 			<view class="nj_zi">
 				我的应用
 			</view>
+			<!-- <view class="nj_middle">
+				
+				<view class="nj_caidan">
+					<view><view class="icon iconfont icon-qicheqianlian-1 blue" style="font-size: 60upx; color: blue;"></view></view>
+					<view style="font-size: 26upx; font-weight: bold;">购物车</view>
+				</view>
+			
+			</view> -->
 			<view class="nj_middle">
+				<view class="nj_caidan">
+					<view @tap="gouwuche"><view class="icon iconfont icon-qicheqianlian-1 blue" style="font-size: 60upx; color: blue;"></view></view>
+					<view style="font-size: 26upx; font-weight: bold;">购物车</view>
+				</view>
 			<block v-for="(item,index) in list" :key="index" >
-			<view class="nj_caidan">
+			<view class="nj_caidan" @tap="tiaozhuan(item.Menu_Active)">
 				<view><view :class="item.Menu_Icon" style="font-size: 60upx; color: blue;"></view></view>
 				<view style="font-size: 26upx; font-weight: bold;"> {{item.Menu_Name}}</view>
 			</view>
@@ -50,15 +62,18 @@
 		<!--下面当导航栏-->
 		<view class="nj_yingyong bottom_caidan">
 			<view class="nj_zi">
-				公司运营
+				我的应用
 			</view>
 			<view class="nj_middle">
-			<block v-for="(item,index) in list" :key="index" >
-			<view class="nj_caidan">
-				<view><image :src="item.image" style="width: 90upx; height: 90upx;"></image></view>
-				<view> {{item.name}}</view>
-			</view>
-		</block>
+				
+			
+				
+			<block v-for="(item,index) in menulists" :key="index" >
+				<view class="nj_caidan" @tap="tiaozhuan(item.Menus_Url)">
+					<view><view :class="item.Menus_icon" style="font-size: 60upx; color: blue;"></view></view>
+					<view style="font-size: 26upx; font-weight: bold;"> {{item.Menus_Name}}</view>
+				</view>
+			</block>
 		</view>
 		</view>
 	</view>
@@ -70,6 +85,10 @@
 	export default {
 		data() {
 			return {
+				name:"",
+				image:"",
+				jifen:"",
+				menulists:[],
 				list:[],
 			imgList: [
 				{iamges:'../../static/images/daxiong.jpg'},
@@ -82,15 +101,17 @@
 	},
 	onLoad() {
 	this.requestmenu();
-		
+		this.requesUser();
+		this.requestmenus()
 	},
 	methods:{
 		cardSwiper(e) {
 			this.cardCur = e.detail.current
 		},
 		requestmenu:function(){
+			
 			uni.request({
-				url:"http://localhost:58793/Api/Logins/logins?id=1",
+				url:this.url+"Logins/logins?id="+this.$store.state.jiaoseID,
 				method:"GET",
 				success:(res)=> {
 					console.log(res)
@@ -98,7 +119,52 @@
 					
 				}
 			})
+		},
+		requestmenus:function(){
+			
+			uni.request({
+				url:this.url+"Logins/menu",
+				method:"GET",
+				success:(res)=> {
+					console.log(res)
+					this.menulists=res.data;
+					
+				}
+			})
+		},
+		
+		requesUser(){
+			
+			uni.request({
+				url:this.url+"Login/loginss",
+				method:"GET",
+				success:(res)=> {
+					console.log(res.data[0]);
+			  // for(){
+				  
+				  
+			  // }
+					this.jifen=res.data[0].User_JIfen;
+					this.image=res.data[0].User_Image;
+					this.name=res.data[0].User_Bieming
+					
+				}
+			})
+		},
+		gouwuche(){
+			console.log("ss")
+		  uni.navigateTo({
+		  	url:"../guwuche/shoping"
+		  })
+		},
+		tiaozhuan(action){
+			console.log(action);
+			uni.navigateTo({
+			  url:action,
+			})
+			
 		}
+		
 }
     
    }
@@ -153,7 +219,7 @@
 	 font-weight: bold;
  }
  .nj-guanli{
-	 width: 100upx;
+	 width: 120upx;
 	 height: 40upx;
 	 background-color:#FB9046 ;
 	 margin-left: 20upx;

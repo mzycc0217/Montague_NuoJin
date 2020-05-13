@@ -1,14 +1,19 @@
 {
   "pages": [
-    "pages/xuqiu/xuqiu",
-    "pages/School/study",
+    "pages/address/address",
     "pages/xuanqujiaose/xuanse",
-    "pages/my/my",
+    "pages/Video/Video",
+    "pages/webzhang/wenzhang",
+    "pages/xuqiu/xuqiu",
+    "pages/guwuche/shoping",
     "pages/Login/login",
     "pages/sahngcheng/sahngcheng",
+    "pages/Decimal/Decimal",
+    "pages/my/my",
+    "pages/School/study",
+    "pages/MyTiezi/tiezi",
     "pages/index/index",
-    "pages/fenlei/fenlei",
-    "pages/Decimal/Decimal"
+    "pages/fenlei/fenlei"
   ],
   "subPackages": [],
   "window": {
@@ -50,6 +55,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap51.json"
+  "usingComponents": {}
 }

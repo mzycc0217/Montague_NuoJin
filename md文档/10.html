@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+   <style>
+     #css{
+      border: 1px solid black;    
+     }
+   </style>
+<body>
+    <div>
+     <table id="tab">
+       <tr>
+         <td>
+           id
+         </td>
+         <td>
+           name
+         </td>
+       </tr>
+     </table>
+    </div>
+</body>
+</html>
+<script>
+
+  /*var table =document.querySelector("div")
+  var table1 =document.querySelectorAll("div")
+console.log(table)
+console.table(table1)*/
+var tab=document.querySelector("#tab")
+tab.border=1;
+
+
+console.log(tab)
+var object=[
+ {id:1,name:"张三"},
+ {id:2,name:"李四"},
+
+ {id:3,name:"王麻子"},
+
+ {id:4,name:"张三1"},
+
+ {id:5,name:"张三2"},
+
+ {id:6,name:"张三3"},
+
+
+
+];
+console.log(object)
+
+var tables=document.createElement("table")
+tables.border=1;
+tables.width="100%";
+var tabless=document.createElement("tbody")
+tables.appendChild(tabless)
+
+
+
+
+//第一行
+for(let i=0;i<object.length;i++){
+
+
+tabless.insertRow(i)
+tabless.rows[i].insertCell(0);
+tabless.rows[i].cells[0].appendChild(document.createTextNode(object[i].id));
+tabless.rows[i].insertCell(1);
+tabless.rows[i].cells[1].appendChild(document.createTextNode(object[i].name));
+
+}
+tab.appendChild(tables);
+var table =document.querySelector("table")
+table.style.backgroundColor="red";
+/*tabless.insertRow(1)
+tabless.rows[1].insertCell(0);
+tabless.rows[1].cells[0].appendChild(document.createTextNode("cell 1,2"));
+tabless.rows[1].insertCell(1);
+tabless.rows[1].cells[1].appendChild(document.createTextNode("cell 2,2"));*/
+
+//将表格添加到文档主题中
+
+    // toFixed 修复
+/*var s="42789045446643712";
+var t=Number(s);
+console.log(typeof t)
+var t= t.toFixed();
+  console.log(t)
+  console.log(typeof t)*/
+</script>

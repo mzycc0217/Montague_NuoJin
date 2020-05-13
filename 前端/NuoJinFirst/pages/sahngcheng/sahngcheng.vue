@@ -28,10 +28,11 @@
 			<block v-for="(items,indexs) in list" :key="indexs">
 				<view class="block-first" @tap="xiangqing(items.Shop_Information_Id)">
 					<view>
-						<image :src="items.childre.shopImage[0]" mode="widthFix"></image>
+						<image :src="getimage(items.Shop_Information_image)" mode="widthFix"></image>
 					</view>
+					<view class="cst">
 					<view>[{{items.Shop_Information_Name}}]</view>
-					<view>出售{{items.Shop_Information_Sell}}</view>
+					<view>出售<text>{{items.Shop_Information_Sell}}</text>个</view></view>
 					<view><i>￥{{items.Shop_Information_Price}}</i></view>
 				</view>
 			</block>
@@ -48,6 +49,7 @@
 			return{
 				search:"",
 				list:[],
+				
 				TabCur: 0,
 				//scrollLeft: 0
 				scrolllef:[{"name":"综合"},
@@ -60,29 +62,51 @@
 			this.requessts();
 		},
 		methods:{
+			xiangqing(id){
+				uni.navigateTo({
+					url:`../Decimal/Decimal?id=${id}`
+				})
+				
+			},
+			
 		requessts:function(){
 			uni.request({
-				url:"http://localhost:58793/Api/Deafalut/AllContent?Shop_Information_Name="+this.search,
+				url:this.url+"Deafalut/AllContent?Shop_Information_Name="+this.search,
 				method:"GET",
 				//header:{'token':token},
 				success: (res) => {
 					console.log(res.data)
 					this.list=res.data;
+					// for(var item of res.data){
+					// that.listimage =item.childrn
+					
+					// 	}
 					
 				}
 			})
 		},
 		tabSelect(e) {
 			this.TabCur = e.currentTarget.dataset.id;
+			console.log(this.TabCur)
 			if(	this.TabCur==0)
 			{
-				this.list=this.list;
+			this.requessts();
 			}
 			else if(this.TabCur==1)
 			{
-			for (let i=0; i<this.list.length; i++) {
-				this.list[i].sort();
+		
+				this.list.sort(function(a,b){
+					return a.Shop_Information_Price-b.Shop_Information_Price
+			})
 			}
+			else if(this.TabCur==2)
+			{
+			
+				this.list.sort(function(a,b){
+					return a.Shop_Information_Sell-b.Shop_Information_Sell
+			})
+		
+			
 			}
 			
 		},
@@ -90,11 +114,14 @@
 			this.requessts();
 		},
 		fellei(){
-			console.log("11")
+			
 			uni.navigateTo({
 				url:"../fenlei/fenlei"
 			})
-		}
+		},
+		getimage:function(imagepa) {
+				return "http://lulumeng.qicp.vip" + imagepa;
+			},
 		
 		
 			
@@ -116,11 +143,12 @@
 		box-shadow: 5px 5px 2px #E4E4E4;
 		background: #EEEEEE;
 		width: 360upx;
-		height: 460upx;
+		height:509upx;
 		border-radius: 15upx;
 		box-shadow: #999999;
 		margin-top: 30upx;
 		font-size: 30upx;
+		
 	}
 	
 	.block-first>view:first-child image {
@@ -128,10 +156,18 @@
 		width: 360upx;
 		height: 300upx;
 	}
-	.block-first>view:nth-child(2) {
-		font-weight: 700;
-		
-		margin-left: 20upx;
+		.cst{
+				font-weight: 700;
+		       display: flex;
+		       margin-left: 22upx;
+		}
+	.cst>view:last-child {
+		color: #797979;
+		font-weight: 400;
+	     margin-left: 135upx;
+	}
+	.cst>view:last-child>text {
+	    color: #D123BB;
 	}
 	
 	.block-first>view:nth-child(3) {

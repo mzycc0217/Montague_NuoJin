@@ -1,0 +1,1 @@
+<view><easy-upload vue-id="1" dataList="{{imageList}}" uploadUrl="http://localhost:58793/Api/Fabu/Contents" types="{{video}}" deleteUrl="http://localhost:3000/upload" uploadCount="{{1}}" data-event-opts="{{[['^successImage',[['successImage']]],['^successVideo',[['successvideo']]]]}}" bind:successImage="__e" bind:successVideo="__e" bind:__l="__l"></easy-upload></view>

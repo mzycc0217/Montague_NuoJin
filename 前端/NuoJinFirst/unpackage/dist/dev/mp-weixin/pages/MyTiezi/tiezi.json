@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我发布的贴子",
+  "navigationBarBackgroundColor": "#F37B1D",
+  "usingComponents": {
+    "nj_header": "/components/header"
+  }
+}

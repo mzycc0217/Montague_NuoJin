@@ -30,6 +30,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Menus_User_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Menus_User_T">
+        <MappingFragment StoreEntitySet="Menus_User_T">
+          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+          <ScalarProperty Name="Menus_Name" ColumnName="Menus_Name" />
+          <ScalarProperty Name="Menus_icon" ColumnName="Menus_icon" />
+          <ScalarProperty Name="Menus_Url" ColumnName="Menus_Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="News_T">
       <EntityTypeMapping TypeName="DB_CateringModel.News_T">
         <MappingFragment StoreEntitySet="News_T">
@@ -66,6 +76,18 @@
           <ScalarProperty Name="Address_Id" ColumnName="Address_Id" />
           <ScalarProperty Name="Order_Count" ColumnName="Order_Count" />
           <ScalarProperty Name="Order_Checked" ColumnName="Order_Checked" />
+          <ScalarProperty Name="Order_Maney" ColumnName="Order_Maney" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pinglun_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Pinglun_T">
+        <MappingFragment StoreEntitySet="Pinglun_T">
+          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+          <ScalarProperty Name="Pinglun_Countent" ColumnName="Pinglun_Countent" />
+          <ScalarProperty Name="Pinglun_time" ColumnName="Pinglun_time" />
+          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -131,6 +153,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="User_Menus_Quanxian_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.User_Menus_Quanxian_T">
+        <MappingFragment StoreEntitySet="User_Menus_Quanxian_T">
+          <ScalarProperty Name="Guanxi_ID" ColumnName="Guanxi_ID" />
+          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="User_Type_T">
       <EntityTypeMapping TypeName="DB_CateringModel.User_Type_T">
         <MappingFragment StoreEntitySet="User_Type_T">
@@ -148,43 +179,53 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Menus_User_T">
-      <EntityTypeMapping TypeName="DB_CateringModel.Menus_User_T">
-        <MappingFragment StoreEntitySet="Menus_User_T">
-          <ScalarProperty Name="Menus_Url" ColumnName="Menus_Url" />
-          <ScalarProperty Name="Menus_icon" ColumnName="Menus_icon" />
-          <ScalarProperty Name="Menus_Name" ColumnName="Menus_Name" />
-          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Pinglun_T">
-      <EntityTypeMapping TypeName="DB_CateringModel.Pinglun_T">
-        <MappingFragment StoreEntitySet="Pinglun_T">
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="Shop_Information_Id" ColumnName="Shop_Information_Id" />
-          <ScalarProperty Name="Pinglun_time" ColumnName="Pinglun_time" />
-          <ScalarProperty Name="Pinglun_Countent" ColumnName="Pinglun_Countent" />
-          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="User_Menus_Quanxian_T">
-      <EntityTypeMapping TypeName="DB_CateringModel.User_Menus_Quanxian_T">
-        <MappingFragment StoreEntitySet="User_Menus_Quanxian_T">
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
-          <ScalarProperty Name="Guanxi_ID" ColumnName="Guanxi_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Zhunjia_T">
       <EntityTypeMapping TypeName="DB_CateringModel.Zhunjia_T">
         <MappingFragment StoreEntitySet="Zhunjia_T">
-          <ScalarProperty Name="Zhujia_Couent" ColumnName="Zhujia_Couent" />
-          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
           <ScalarProperty Name="ZhuiJia_ID" ColumnName="ZhuiJia_ID" />
+          <ScalarProperty Name="Pinglun_ID" ColumnName="Pinglun_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Zhujia_Couent" ColumnName="Zhujia_Couent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuanxianS_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.QuanxianS_T">
+        <MappingFragment StoreEntitySet="QuanxianS_T">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Menus_ID" ColumnName="Menus_ID" />
+          <ScalarProperty Name="Quanxians_ID" ColumnName="Quanxians_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.Video_T">
+        <MappingFragment StoreEntitySet="Video_T">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Video_number" ColumnName="Video_number" />
+          <ScalarProperty Name="Video_isor" ColumnName="Video_isor" />
+          <ScalarProperty Name="Video_backtime" ColumnName="Video_backtime" />
+          <ScalarProperty Name="Video_time" ColumnName="Video_time" />
+          <ScalarProperty Name="Video_image" ColumnName="Video_image" />
+          <ScalarProperty Name="Video_Content" ColumnName="Video_Content" />
+          <ScalarProperty Name="Video_title" ColumnName="Video_title" />
+          <ScalarProperty Name="Video_ID" ColumnName="Video_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wenzhang_T">
+      <EntityTypeMapping TypeName="DB_CateringModel.wenzhang_T">
+        <MappingFragment StoreEntitySet="wenzhang_T">
+          <ScalarProperty Name="wenzhang_Describe" ColumnName="wenzhang_Describe" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="wenzhang_number" ColumnName="wenzhang_number" />
+          <ScalarProperty Name="wenzhang_isor" ColumnName="wenzhang_isor" />
+          <ScalarProperty Name="wenzhang_backtime" ColumnName="wenzhang_backtime" />
+          <ScalarProperty Name="wenzhang_time" ColumnName="wenzhang_time" />
+          <ScalarProperty Name="wenzhang_image" ColumnName="wenzhang_image" />
+          <ScalarProperty Name="wenzhang_Content" ColumnName="wenzhang_Content" />
+          <ScalarProperty Name="wenzhang_title" ColumnName="wenzhang_title" />
+          <ScalarProperty Name="wenzhang_ID" ColumnName="wenzhang_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

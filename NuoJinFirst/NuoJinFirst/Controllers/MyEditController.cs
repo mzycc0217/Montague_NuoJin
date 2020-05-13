@@ -55,6 +55,94 @@ namespace NuoJinFirst.Controllers
         //   // var list=from p in db.User_Information_T.Where(p=>p.)
 
         //}
+        /// <summary>
+        /// 添加评论
+        /// </summary>
+        /// <returns></returns>
+        [Route("Alledits")]
+        // [Myauth]
+        [HttpPost]
+        public async Task<IHttpActionResult> SetsAlls(Pinglun_T pinglun)
+        {
+            try
+            {
+                if (pinglun != null)
+                {
+
+
+                    //   int id = ((UserIdentity)User.Identity).Id;     
+                    var ad = DateTime.Now;
+
+                    Pinglun_T pinglun_T1 = await Task.Run(() => new Pinglun_T
+                    {
+                        Pinglun_Countent = pinglun.Pinglun_Countent,
+                        Pinglun_time = ad,
+                        Shop_Information_Id = 2,
+                        User_ID = 1
+
+
+
+                    });
+                    db.Pinglun_T.Add(pinglun_T1);
+                    if (db.SaveChanges() > 0)
+                    {
+                        return Json(new { code = 200 });
+                    }
+                    else
+                    {
+                        return Json(new { code = 400 });
+                    }
+
+                }
+                else
+                {
+                    return Json(new { code = 401 });
+                }
+            
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                return Json(Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message));
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// 删除评论
+        /// </summary>
+        /// <returns></returns>
+        //[Route("Deletedits")]
+        //// [Myauth]
+        //[HttpPost]
+        //public async Task<IHttpActionResult> Setsping(int id)
+        //{
+        //    try
+        //    {
+        //        if (id != null)
+        //        {
+        //        //   int id = ((UserIdentity)User.Identity).Id; 
+                
+
+
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return Json(Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message));
+        //    }
+
+
+        //}
 
     }
 }

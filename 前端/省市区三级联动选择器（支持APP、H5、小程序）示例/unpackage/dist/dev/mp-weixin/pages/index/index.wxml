@@ -1,0 +1,1 @@
+<view><pick-regions vue-id="1" defaultRegion="{{defaultRegionCode}}" data-event-opts="{{[['^getRegion',[['handleGetRegion']]]]}}" bind:getRegion="__e" bind:__l="__l" vue-slots="{{['default']}}"><view class="_h2">点击选择省市区</view></pick-regions><view class="_h3">{{regionName}}</view></view>

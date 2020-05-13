@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "文章发布",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

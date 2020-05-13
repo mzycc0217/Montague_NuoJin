@@ -1,0 +1,15 @@
+
+.liandong{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.zixing{
+	width: 400rpx;
+	height: 30rpx;
+	background-color: #efefef;
+}
+..zixing input{
+	border: 1rpx solid black;
+}
+

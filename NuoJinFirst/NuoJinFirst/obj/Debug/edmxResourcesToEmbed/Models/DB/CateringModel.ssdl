@@ -32,7 +32,7 @@
     </Key>
     <Property Name="Menus_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Menus_Name" Type="nvarchar" MaxLength="10" />
-    <Property Name="Menus_icon" Type="nvarchar" MaxLength="20" />
+    <Property Name="Menus_icon" Type="nvarchar" MaxLength="50" />
     <Property Name="Menus_Url" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="News_T">
@@ -62,14 +62,15 @@
     <Key>
       <PropertyRef Name="Order_Id" />
     </Key>
-    <Property Name="Order_Id" Type="bigint" Nullable="false" />
+    <Property Name="Order_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_ID" Type="bigint" />
     <Property Name="Shop_Information_Id" Type="bigint" />
     <Property Name="Order_time" Type="datetime" />
     <Property Name="Order_State" Type="int" />
     <Property Name="Address_Id" Type="bigint" />
     <Property Name="Order_Count" Type="int" />
-    <Property Name="Order_Checked" Type="nchar" MaxLength="10" />
+    <Property Name="Order_Checked" Type="int" />
+    <Property Name="Order_Maney" Type="decimal" Precision="5" Scale="2" />
   </EntityType>
   <EntityType Name="Pinglun_T">
     <Key>
@@ -88,6 +89,14 @@
     <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Menu_ID" Type="bigint" />
     <Property Name="User_TyID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="QuanxianS_T">
+    <Key>
+      <PropertyRef Name="Quanxians_ID" />
+    </Key>
+    <Property Name="Quanxians_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menus_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
   </EntityType>
   <EntityType Name="Shop_Information_T">
     <Key>
@@ -160,6 +169,35 @@
     </Key>
     <Property Name="User_Vip_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_Vip_Name" Type="nvarchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="Video_T">
+    <Key>
+      <PropertyRef Name="Video_ID" />
+    </Key>
+    <Property Name="Video_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Video_title" Type="nvarchar" MaxLength="10" />
+    <Property Name="Video_Content" Type="nvarchar" MaxLength="120" />
+    <Property Name="Video_image" Type="nvarchar" MaxLength="40" />
+    <Property Name="Video_time" Type="datetime" />
+    <Property Name="Video_backtime" Type="nvarchar" MaxLength="40" />
+    <Property Name="Video_isor" Type="int" />
+    <Property Name="Video_number" Type="int" />
+    <Property Name="User_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="wenzhang_T">
+    <Key>
+      <PropertyRef Name="wenzhang_ID" />
+    </Key>
+    <Property Name="wenzhang_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wenzhang_title" Type="nvarchar" MaxLength="20" />
+    <Property Name="wenzhang_Content" Type="nvarchar" MaxLength="220" />
+    <Property Name="wenzhang_image" Type="nvarchar" MaxLength="60" />
+    <Property Name="wenzhang_time" Type="datetime" />
+    <Property Name="wenzhang_backtime" Type="datetime" />
+    <Property Name="wenzhang_isor" Type="int" />
+    <Property Name="wenzhang_number" Type="int" />
+    <Property Name="User_ID" Type="bigint" />
+    <Property Name="wenzhang_Describe" Type="nvarchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="Zhunjia_T">
     <Key>
@@ -326,6 +364,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Video_T_User_Information_T">
+    <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+    <End Role="Video_T" Type="Self.Video_T" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Information_T">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Video_T">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_wenzhang_T_User_Information_T">
+    <End Role="User_Information_T" Type="Self.User_Information_T" Multiplicity="0..1" />
+    <End Role="wenzhang_T" Type="Self.wenzhang_T" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Information_T">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="wenzhang_T">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DB_CateringModelStoreContainer">
     <EntitySet Name="Adddress_T" EntityType="Self.Adddress_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="db_Shop_Type_T" EntityType="Self.db_Shop_Type_T" Schema="dbo" store:Type="Tables" />
@@ -336,6 +398,7 @@
     <EntitySet Name="Order_T" EntityType="Self.Order_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pinglun_T" EntityType="Self.Pinglun_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Quanxian_T" EntityType="Self.Quanxian_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuanxianS_T" EntityType="Self.QuanxianS_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shop_Information_T" EntityType="Self.Shop_Information_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shop_T" EntityType="Self.Shop_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Information_T" EntityType="Self.User_Information_T" Schema="dbo" store:Type="Tables" />
@@ -343,6 +406,8 @@
     <EntitySet Name="User_Menus_Quanxian_T" EntityType="Self.User_Menus_Quanxian_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Type_T" EntityType="Self.User_Type_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_Vip_T" EntityType="Self.User_Vip_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Video_T" EntityType="Self.Video_T" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wenzhang_T" EntityType="Self.wenzhang_T" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zhunjia_T" EntityType="Self.Zhunjia_T" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_News_T_News_Type_T" Association="Self.FK_News_T_News_Type_T">
       <End Role="News_Type_T" EntitySet="News_Type_T" />
@@ -395,6 +460,14 @@
     <AssociationSet Name="FK_User_Menus_Quanxian_T_User_Information_T" Association="Self.FK_User_Menus_Quanxian_T_User_Information_T">
       <End Role="User_Information_T" EntitySet="User_Information_T" />
       <End Role="User_Menus_Quanxian_T" EntitySet="User_Menus_Quanxian_T" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Video_T_User_Information_T" Association="Self.FK_Video_T_User_Information_T">
+      <End Role="User_Information_T" EntitySet="User_Information_T" />
+      <End Role="Video_T" EntitySet="Video_T" />
+    </AssociationSet>
+    <AssociationSet Name="FK_wenzhang_T_User_Information_T" Association="Self.FK_wenzhang_T_User_Information_T">
+      <End Role="User_Information_T" EntitySet="User_Information_T" />
+      <End Role="wenzhang_T" EntitySet="wenzhang_T" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

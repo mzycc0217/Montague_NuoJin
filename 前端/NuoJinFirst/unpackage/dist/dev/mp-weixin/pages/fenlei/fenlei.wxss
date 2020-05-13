@@ -1,0 +1,57 @@
+
+.zhanweo{
+	width: 100%; height:160rpx;  background-color:  #F37B1D;
+}
+.list-flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.item_leftlist {
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	border-bottom: 0.5rpx solid white;
+}
+.item_leftlists {
+	font-size: 32rpx;
+	font-weight: 700;
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	border-bottom: 0.5rpx solid white;
+	position: relative;
+}
+.shuxian {
+	position: absolute;
+	background: red;
+	height: 55rpx;
+	width: 18rpx;
+	top: 25rpx;
+	border-radius: 5rpx;
+	left: 14rpx;
+}
+.listss {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.listss>view {
+	width: 181rpx;
+	height: 300rpx;
+	border: 0.5rpx solid #E6E6E6;
+	margin-top: 40rpx;
+	margin-left: 3rpx;
+	border-radius: 5rpx;
+}
+.image_s>image {
+	width: 180rpx;
+	height: 200rpx;
+}
+.fonts {
+	margin-top: 30rpx;
+	margin-left: 40rpx;
+}
+

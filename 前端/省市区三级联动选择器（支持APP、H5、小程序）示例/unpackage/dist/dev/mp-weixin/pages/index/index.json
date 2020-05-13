@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "pick-regions组件",
+  "usingComponents": {
+    "pick-regions": "/components/pick-regions/pick-regions"
+  }
+}
